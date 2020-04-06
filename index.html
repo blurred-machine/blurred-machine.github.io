@@ -82,6 +82,21 @@
 </div>
 <!-- partial -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="about">
         <div class="container">
             <div class="row">
@@ -104,6 +119,22 @@
         </div>
     </div>
     <!-- End #about -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="experience" class="background-alt">
         <h2 class="heading">Experiences</h2>
@@ -201,9 +232,22 @@
     </div>
     <!-- End #experience -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="education">
         <h2 class="heading">Education</h2>
-        <div class="education-block">
+        <div class="education-block shadow-large">
             <h3>Indian Institute of Information Technology</h3>
             <span class="education-date">July 2016 - June 2020</span>
             <h4>Bachelor of Technology in Computer Science</h4>
@@ -219,7 +263,7 @@
         </div>
         <!-- End .education-block -->
 
-        <div class="education-block">
+        <div class="education-block shadow-large">
             <h3>Radiant Stars English School</h3>
             <span class="education-date">April 2013 - April 2015</span>
             <h4>Higher Secondry School</h4>
@@ -230,7 +274,7 @@
         </div>
         <!-- End .education-block -->
 
-        <div class="education-block">
+        <div class="education-block shadow-large">
             <h3>Our Lady of Fatima School</h3>
             <span class="education-date">April 2013 - April 2015</span>
             <h4>Higher Secondry School</h4>
@@ -243,26 +287,37 @@
     </div>
     <!-- End #education -->
 
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    var rawbase = 'https://raw.githubusercontent.com/';
+var jsonloc = 'pv009/pv009.github.io/master/data/projects.json';
+
+$.getJSON(rawbase + jsonloc, function( data ) {
+   console.log(data);
+  //do what you want with data
+});
+
+</script>
+
+
+
+
+
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
 
+                <div class="col-sm-4">
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/project.jpg" />
@@ -275,13 +330,37 @@
                         </p>
                         <a href="#">View Project</a>
                     </div>
-                    <!-- End .project-info -->
                 </div>
-                <!-- End .project -->
+                </div>
+
+
+
+
+
             </div>
         </div>
     </div>
     <!-- End #projects -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="skills">
         <h2 class="heading">Skills</h2>
@@ -318,6 +397,20 @@
     </div>
     <!-- End #skills -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id="contact">
         <h2>Hire Me!</h2>
         <div id="contact-form">
@@ -331,6 +424,21 @@
         <!-- End #contact-form -->
     </div>
     <!-- End #contact -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer>
         <div class="container">
@@ -374,6 +482,17 @@
         </div>
     </footer>
     <!-- End footer -->
+
+
+
+
+
+
+
+
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>

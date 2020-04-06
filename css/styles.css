@@ -1,15 +1,6 @@
-/*!
-    Title: Dev Portfolio Template
-    Version: 1.2.2
-    Last Change: 03/25/2020
-    Author: Ryan Fitzgerald
-    Repo: https://github.com/RyanFitzgerald/devportfolio-template
-    Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
 
-    Description: This file contains all the styles associated with the page
-    that don't come from third party libraries. This file gets compiled using
-    Gulp and send to the /css folder which is then loaded on the page.
-*/body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z-index:-1}.no-js 
+
+body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z-index:-1}.no-js 
 
 #experience-timeline>div{background:#fff;padding:10px;margin-bottom:10px;border:1px solid #dcd9d9}.no-js 
 #experience-timeline>div h3{font-size:1.5em;font-weight:300;color:#374054;display:inline-block;margin:0}.no-js 
@@ -71,7 +62,7 @@
 
 #experience{padding:50px 15px;text-align:center;border-bottom:1px solid #86377b}
 #experience h2{color:#374054}
-.experience-box {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.experience-box {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 #experience-timeline{margin:30px auto 0 auto;position:relative;max-width:1000px}
 #experience-timeline:before{position:absolute;content:'';top:0;bottom:0;left:303px;right:auto;height:100%;width:3px;background:#86377b;z-index:0}
 #experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#86377b;background:linear-gradient(to bottom, #86377b, rgba(52,152,219,0));top:100%;left:303px}
@@ -85,9 +76,9 @@
 .vtimeline-icon i{display:block;font-size:2em;margin-top:10px}
 .vtimeline-date{width:260px;text-align:right;position:absolute;left:0;top:10px;font-weight:300;color:#374054}
 
-#education{padding:50px 15px 20px 15px;border-bottom:1px solid #86377b;text-align:center}
+#education{padding:50px 15px 20px 15px;border-bottom:1px solid #86377b;text-align:center;}
 #education h2{color:#374054;margin-bottom:50px}
-.education-block{max-width:700px;margin:0 auto 30px auto;padding:15px;border:1px solid #dcd9d9;text-align:left; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.education-block{max-width:700px;margin:0 auto 30px auto;padding:15px;border:1px solid #dcd9d9;text-align:left; border-radius:10px}
 .education-block h3{font-weight:500;float:left;margin:0;color:#374054}
 .education-block span{color:#74808a;float:right}
 .education-block h4{color:#74808a;clear:both;font-weight:500;margin:0 0 15px 0}
