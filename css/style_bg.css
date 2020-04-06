@@ -28,7 +28,6 @@
 
 .bgTop {
     z-index: 15;
-    opacity: 0.5;
 }
 .bgMiddle {
     z-index: 10;
@@ -49,6 +48,7 @@
 }
 .waveTop {
     background-size: 50% 100px;
+        opacity: 0.5;
 }
 .waveAnimation .waveTop {
   animation: move-wave 3s;
