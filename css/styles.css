@@ -71,6 +71,7 @@
 
 #experience{padding:50px 15px;text-align:center;border-bottom:1px solid #86377b}
 #experience h2{color:#374054}
+.experience-box {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 #experience-timeline{margin:30px auto 0 auto;position:relative;max-width:1000px}
 #experience-timeline:before{position:absolute;content:'';top:0;bottom:0;left:303px;right:auto;height:100%;width:3px;background:#86377b;z-index:0}
 #experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#86377b;background:linear-gradient(to bottom, #86377b, rgba(52,152,219,0));top:100%;left:303px}
@@ -87,7 +88,6 @@
 #education{padding:50px 15px 20px 15px;border-bottom:1px solid #86377b;text-align:center}
 #education h2{color:#374054;margin-bottom:50px}
 .education-block{max-width:700px;margin:0 auto 30px auto;padding:15px;border:1px solid #dcd9d9;text-align:left; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
-.education-block:hover {background-color: #f2f2f2;}
 .education-block h3{font-weight:500;float:left;margin:0;color:#374054}
 .education-block span{color:#74808a;float:right}
 .education-block h4{color:#74808a;clear:both;font-weight:500;margin:0 0 15px 0}
