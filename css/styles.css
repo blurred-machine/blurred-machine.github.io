@@ -1,5 +1,3 @@
-
-
 body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z-index:-1}.no-js 
 
 #experience-timeline>div{background:#fff;padding:10px;margin-bottom:10px;border:1px solid #dcd9d9}.no-js 
@@ -92,10 +90,10 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 
 .project{position:relative;max-width:900px; margin:0 auto 30px auto;overflow:hidden;background:#fff;border-radius:4px}
 .project-image{float:left;}
-.project-image img{float:left; width: 300px; height: 300px;}
+.project-image img{float:left; width: 150px; height: 150px;}
 
 
-.project-info{position:absolute;top:50%;transform:translateY(-50%);margin-left:300px;padding:15px}
+.project-info{position:absolute;top:50%;transform:translateY(-50%);margin-left:150px;padding:15px}
 .project-info h3{font-size:1.5em;font-weight:300;color:#374054;margin:0 0 15px 0}
 .project-info p{color:#74808a;margin:0 0 15px 0;font-size:0.9em}
 .no-image 
