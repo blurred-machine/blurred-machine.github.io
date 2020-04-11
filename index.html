@@ -321,13 +321,120 @@
                 </div>
             </div>
         </div> -->
-        <br/>Work in Progress<br/>Projects Section coming soon.
+<br/><b>(Projects section work in progress)</b><br/><br/>
+        <div id="container-projects"></div>
+
+            <a href="https://github.com/paras009/" target="_blank" class="btn-rounded-blue" style="color:#44a6c6">Show More</a>
 
     </div>
     <!-- End #projects -->
 
 
+        <script>
 
+              let request = new XMLHttpRequest();
+              const base_url = "https://api.github.com/users/paras009/repos"
+              const per_page = 10
+              const page_number = 1
+              const sorting = "pushed"
+
+              var total_commits = 0
+
+              const link_repo = "https://github.com/paras009/"
+              request.open("GET", base_url+"?per_page="+per_page+"&page="+page_number+"&sort="+sorting);
+              request.send();
+              request.onload = () => {
+                console.log(request);
+                if (request.status === 200) {
+                  const obj = JSON.parse(request.response);
+                    var data_size = obj.length;
+
+                // set data to be even to fit into all the blocks.
+                if (data_size % 2 == 1){
+                    data_size -= 1;
+                }
+                // $('#container-me').html(obj[0].title);
+
+                    for(i = 0;i<data_size;i+=2)
+                    {
+                        document.getElementById("container-projects").innerHTML += "<div id=proj-inner-"+i+"></div>";
+
+                        const commits_repo = "https://api.github.com/repos/paras009/"+obj[i].name+"/commits"
+                        request.open("GET", commits_repo);
+                        request.send();
+                        request.onload = () => {
+                        console.log(request);
+                        if (request.status === 200) {
+                          const obj = JSON.parse(request.response);
+                            total_commits = obj.length;
+                        }};
+
+
+
+
+                        
+                        
+                        var name_list1 = obj[i].name.split("-");
+                        var proj_name1 = name_list1.join(' ')
+                        
+                        var name_list2 = obj[i+1].name.split("-");
+                        var proj_name2 = name_list2.join(' ')
+
+                        const markup = `
+                            <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                        <div class="project shadow-large">
+                                            <div class="project-image">
+                                                <img src="images/github_octocat.png" />
+                                            </div>
+                                            <div class="project-info">
+                                                <h3>${proj_name1}</h3>
+                                                <p style="text-align: justify;">
+                                                    ${obj[i].description}(Language: ${obj[i].language})
+                                                </p>
+                                                <a style="color:#44a6c6;" href="${link_repo}${obj[i].name}">View Project</a>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                        <div class="project shadow-large">
+                                            <div class="project-image">
+                                                <img src="images/github_octocat.png" />
+                                            </div>
+                                            <div class="project-info">
+                                                <h3>${proj_name2}</h3>
+                                                <p style="text-align: justify;">
+                                                    ${obj[i+1].description}(Language: ${obj[i+1].language})
+                                                </p>
+                                                <a style="color:#44a6c6;" href="${link_repo}${obj[i+1].name}">View Project</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        `;
+
+                        document.getElementById("proj-inner-"+i).innerHTML = markup;
+                    }
+
+
+
+                } else {
+                  console.log(`error ${request.status} ${request.statusText}`);
+                }
+              };
+
+
+            fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(res => {
+                return res.text();
+            })
+            .then(data => {
+                
+    });         
+        </script>
 
 
 
