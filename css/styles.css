@@ -52,7 +52,7 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 
 #lead{position:relative;height:100vh;min-height:500px;max-height:1080px;padding:15px;overflow:hidden;    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);background-size:cover;}
 
-#lead-content{position:absolute;z-index:10;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center}
+#lead-content{position:absolute;z-index:10;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;margin-top: 50px}
 #lead-content h1,
 #lead-content h2{margin:0}
 #lead-content h1{color:#fff;font-weight:900;font-size:5em;text-transform:uppercase;letter-spacing:0.05em;line-height:0.9em}
