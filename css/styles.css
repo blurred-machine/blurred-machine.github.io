@@ -104,10 +104,11 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 
 
 .project-info{position:relative;margin:0;padding:20px 15px;transform:none;}
-.project-info h3{font-size:1.2em;font-weight:300;color:#374054;margin:0 0 15px 0;overflow: hidden;
+.project-info h3{font-size:1.2em;font-weight:300;color:white;margin:0 0 15px 0;overflow: hidden;
+								background: #374054;
                                text-overflow: ellipsis;
                                display: -webkit-box;
-                               -webkit-line-clamp: 2;
+                               -webkit-line-clamp: 1;
                                -webkit-box-orient: vertical;}
 .project-info p{color:#74808a;margin:0 0 15px 0;font-size:0.9em; overflow: hidden;
                                text-overflow: ellipsis;
@@ -123,7 +124,7 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
  #exp_skills li{display:inline-block;margin:5px;padding:3px 6px;color:#374054;background:#e4e4ea;list-style:none;cursor:default;font-size:0.7em} 
 
  #skills{padding:50px 15px;text-align:center}
- #skills h2{color:#374054;margin-bottom:20px}
+ #skills h2{color:#374054;margin-bottom:40px}
  #skills ul{display:block;margin:0 auto;padding:0;max-width:1000px}
  #skills li{display:inline-block;margin:7px;padding:5px 10px;color:#374054;background:#e4e4ea;list-style:none;cursor:default;font-size:1.2em}
  #skills li:hover{display:inline-block;margin:7px;padding:5px 10px;color:white;background:#732f69;list-style:none;cursor:default;font-size:1.2em}
