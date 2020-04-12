@@ -1,12 +1,16 @@
 {
-  "name": "devportfolio-template",
-  "version": "1.2.2",
-  "description": "",
+  "name": "parasvarshney-portfolio",
+  "version": "1.0.2",
+  "description": "Paras Varshney",
   "main": "js/scripts.js",
   "scripts": {
     "watch": "gulp watch"
   },
   "keywords": [
+    "Paras Varshney",
+    "Data Science",
+    "Machine Learning",
+    "IIITDM kurnool",
     "portfolio",
     "personal",
     "website",
@@ -14,7 +18,7 @@
     "coding",
     "dev"
   ],
-  "author": "Ryan Fitzgerald",
+  "author": "Paras Varshney",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
