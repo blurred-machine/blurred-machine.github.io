@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-<meta http-equiv="content-type|default-style|refresh">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Paras Varshney">
     <meta name="keywords" content="Paras Varshney, Data Science, Machine Learning">
@@ -24,14 +24,15 @@
 
 <body>
     
-    
 
     <div id="lead">
-    	<a href="https://parasvarshney.ml/" target="_blank">
+
+    	<!-- <a href="https://parasvarshney.ml/" target="_blank">
     		<img style="height: 80px; width: 80px;   border-radius: 50%; background: gray;" src="images/bg.jpg" alt="Paras Varshney Website">
-		</a>
+		</a> -->
+
 	</div>
-    <!-- End #lead -->
+
 
 
     <!-- partial:index.partial.html -->
@@ -39,10 +40,11 @@
 
 
   <div class="waveWrapperInner bgTop">
-     <div id="mobile-menu-open" class="shadow-large ">
+
+      <!-- <div id="mobile-menu-open" class="shadow-large">
         <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- End #mobile-menu-toggle -->
+    </div> -->
+
     <header>
         <div id="mobile-menu-close">
             <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
@@ -416,21 +418,7 @@
                     for(i = 0;i<data_size;i+=2)
                     {
                         document.getElementById("container-projects").innerHTML += "<div id=proj-inner-"+i+"></div>";
-
-                        const commits_repo = "https://api.github.com/repos/paras009/"+obj[i].name+"/commits"
-                        request.open("GET", commits_repo);
-                        request.send();
-                        request.onload = () => {
-                        console.log(request);
-                        if (request.status === 200) {
-                          const obj = JSON.parse(request.response);
-                            total_commits = obj.length;
-                        }};
-
-
-
-
-                        
+   
                         
                         var name_list1 = obj[i].name.split("-");
                         var proj_name1 = name_list1.join(' ')
