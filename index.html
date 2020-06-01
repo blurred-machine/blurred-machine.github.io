@@ -394,7 +394,7 @@
 <br/><b>(My Projects load dynamically. I am too lazy to add them one by one!)</b><br/><br/><br>
         <div id="container-projects"></div>
 
-            <a href="https://github.com/paras009/" target="_blank" class="btn-rounded-blue" style="color:#44a6c6">Show More</a>
+            <a href="https://github.com/blurred-machine/" target="_blank" class="btn-rounded-blue" style="color:#44a6c6">Show More</a>
 
     </div>
     <!-- End #projects -->
@@ -403,14 +403,14 @@
         <script>
 
               let request = new XMLHttpRequest();
-              const base_url = "https://api.github.com/users/paras009/repos"
+              const base_url = "https://api.github.com/users/blurred-machine/repos"
               const per_page = 10
               const page_number = 1
               const sorting = "pushed"
 
               var total_commits = 0
 
-              const link_repo = "https://github.com/paras009/"
+              const link_repo = "https://github.com/blurred-machine/"
               request.open("GET", base_url+"?per_page="+per_page+"&page="+page_number+"&sort="+sorting);
               request.send();
               request.onload = () => {
