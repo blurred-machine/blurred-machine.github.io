@@ -37,6 +37,18 @@
     z-index: 5;
 }
 
+
+
+
+#blog_banner{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+
 .wave {
     position: absolute;
     left: 0;
