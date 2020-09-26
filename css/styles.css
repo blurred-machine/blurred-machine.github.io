@@ -35,6 +35,38 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 .social-main a:hover{color:#b54aa6}
 
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#blog_banner{
+	width: 100px;
+	height: 100px;
+}
+
+
+
 
 .btn-rounded-white{display:inline-block;color:#fff;padding:15px 25px;border:3px solid #fff;border-radius:30px;transition:.5s ease all}
 .btn-rounded-white:hover{color:#3498db;background:#fff;text-decoration:none}
