@@ -35,31 +35,37 @@ var typing_description = document.getElementById('typing_description');
 
 var description_typewriter = new Typewriter(typing_description, {
     loop: true,
-    delay: 80,
+    delay: 40,
     autoStart: true,
-    deleteSpeed: 5
+    deleteSpeed: 10
 });
 
-description_typewriter.typeString('Hello World!')
-    .pauseFor(1200)
+description_typewriter.typeString('Namaste! 👋')
+    .pauseFor(400)
     .deleteAll()
 
-    .typeString("I'm a <strong>Data Scientist at IISc</strong>")
+    .typeString("I'm Paras, a <strong>Data Scientist</strong> at <strong>Kaggle Days</strong>")
     .pauseFor(1500)
-    .deleteChars(22)
+    .deleteChars(38)
 
-    .typeString("<strong>Global Data Science Ambassador @ HP</strong> & <strong>NVIDIA</strong>")
+    .typeString("a <strong>Global Data Science Ambassador @ HP</strong> & <strong>NVIDIA</strong>")
     .pauseFor(1500)
-    .deleteChars(45)
+    .deleteChars(47)
 
-    .typeString("<strong>Kaggle Master</strong>")
-    .pauseFor(1500)
-    .deleteChars(15)
-
-    .typeString("an Author @ <strong>Towards Data Science</strong>")
+    .typeString(" an Author @ <strong>Towards Data Science</strong>")
     .pauseFor(1500)
     // .deleteChars(31)
+    .deleteChars(33)
+
+    .typeString(" a <strong>Kaggle Master</strong>")
+    .pauseFor(1500)
     .deleteAll()
+
+    .typeString("Let's scroll down ⬇️")
+    .pauseFor(5000)
+    // .deleteChars(31)
+    .deleteAll()
+
     .start();
 
 
