@@ -45,11 +45,11 @@ description_typewriter.typeString('Namaste! 👋')
     .deleteAll()
 
     .typeString("I'm Paras, a <strong>Data Scientist</strong> at <strong>Kaggle Days</strong>")
-    .pauseFor(1500)
+    .pauseFor(1800)
     .deleteChars(38)
 
     .typeString("a <strong>Global Data Science Ambassador @ HP</strong> & <strong>NVIDIA</strong>")
-    .pauseFor(1500)
+    .pauseFor(1800)
     .deleteChars(47)
 
     .typeString(" an Author @ <strong>Towards Data Science</strong>")
@@ -58,10 +58,10 @@ description_typewriter.typeString('Namaste! 👋')
     .deleteChars(33)
 
     .typeString(" a <strong>Kaggle Master</strong>")
-    .pauseFor(1500)
+    .pauseFor(1200)
     .deleteAll()
 
-    .typeString("Let's scroll down ⬇️")
+    .typeString("Surf though the waves! ⬇️")
     .pauseFor(5000)
     // .deleteChars(31)
     .deleteAll()

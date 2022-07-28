@@ -26,13 +26,13 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 .social ul{margin:5px 0 0 0;padding:0}
 .social li{display:inline-block;font-size:1.25em;list-style:none}
 .social a{display:block;color:#74808a;padding:10px}
-.social a:hover{color:#86377b}
+.social a:hover{color:#3498db}
 
 .social-main{text-align:center;}
 .social-main ul{margin:5px 0 0 0;padding:0}
 .social-main li{display:inline-block;font-size:1.25em;list-style:none}
 .social-main a{display:block;color:white;padding:10px}
-.social-main a:hover{color:#b54aa6}
+.social-main a:hover{color:#3498db}
 
 
 .card {
@@ -40,7 +40,7 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
   padding: 16px;
   margin: 10px;
   text-align: center;
-  background-color: white;
+  background-color: #ecf0f3;
 }
 
 .column {
@@ -78,11 +78,11 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 .shadow-large{box-shadow:0 3px 6px rgba(0,0,0,0.08),0 3px 6px rgba(0,0,0,0.15)}
 
 .heading{position:relative;display:inline-block;font-size:2em;font-weight:500;margin:0 0 30px 0}
-.heading:after{position:absolute;content:'';top:100%;height:2px;width:50px;left:0;right:0;margin:0 auto;background:#86377b}
+.heading:after{position:absolute;content:'';top:100%;height:2px;width:50px;left:0;right:0;margin:0 auto;background:#009FFD}
 
 .background-alt{background:#f2f2f5}
 
-#lead{position:relative;height:100vh;min-height:500px;max-height:1080px;padding:15px;overflow:hidden;    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);background-size:cover;}
+#lead{position:relative;height:100vh;min-height:500px;max-height:1080px;padding:15px;overflow:hidden;    background-image: linear-gradient(to top, #2A2A72 20%, #009FFD 80%);background-size:cover;}
 
 #lead-content{position:absolute;z-index:10;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;margin-top: 50px}
 #lead-content h1,
@@ -96,27 +96,27 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 #lead-down span{cursor:pointer;display:block;margin:0 auto;width:35px;height:35px;border-radius:50%;border:3px solid #a0cfee;text-align:center}
 #lead-down i{animation:pulsate 1.5s ease;animation-iteration-count:infinite;padding-top:5px}@keyframes pulsate{0%{transform:scale(1, 1)}50%{transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}
 
-#about{padding:75px 15px;border-bottom:1px solid #86377b; z-index: 20; position: relative; background: white;}
+#about{padding:75px 15px;border-bottom:1px solid #009FFD; z-index: 20; position: relative; background: white;}
 #about h2{color:#374054}
 #about p{color:black;margin:0}
 
-#experience{padding:50px 15px;text-align:center;border-bottom:1px solid #86377b;  position: relative; background: #f2f2f2;z-index: 20}
+#experience{padding:50px 15px;text-align:center;border-bottom:1px solid #009FFD;  position: relative; background: #f2f2f2;z-index: 20}
 #experience h2{color:#374054}
 .experience-box {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 #experience-timeline{margin:30px auto 0 auto;position:relative;max-width:1000px}
-#experience-timeline:before{position:absolute;content:'';top:0;bottom:0;left:303px;right:auto;height:100%;width:3px;background:#86377b;z-index:0}
-#experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#86377b;background:linear-gradient(to bottom, #86377b, rgba(52,152,219,0));top:100%;left:303px}
+#experience-timeline:before{position:absolute;content:'';top:0;bottom:0;left:303px;right:auto;height:100%;width:3px;background:#009FFD;z-index:0}
+#experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#009FFD;background:linear-gradient(to bottom, #009FFD, rgba(52,152,219,0));top:100%;left:303px}
 
 .vtimeline-content{margin-left:350px;background:#fff;border:1px solid #e6e6e6;padding:15px;border-radius:3px;text-align:left}
 .vtimeline-content h3{font-size:1.5em;font-weight:300;color:#374054;display:inline-block;margin:0}
 .vtimeline-content h4{font-size:1.2em;font-weight:300;color:#7e8890;margin:0 0 15px 0}
 .vtimeline-content p{color:#74808a;font-size:0.9em;margin:0}
 .vtimeline-point{position:relative;display:block;vertical-align:top;margin-bottom:30px}
-.vtimeline-icon{position:relative;color:#fff;width:50px;height:50px;background:#86377b;border-radius:50%;float:left;z-index:99;margin-left:280px}
+.vtimeline-icon{position:relative;color:#fff;width:50px;height:50px;background:#009FFD;border-radius:50%;float:left;z-index:99;margin-left:280px}
 .vtimeline-icon i{display:block;font-size:2em;margin-top:10px}
 .vtimeline-date{width:260px;text-align:right;position:absolute;left:0;top:10px;font-weight:300;color:#374054}
 
-#education{padding:50px 15px 20px 15px;border-bottom:1px solid #86377b;text-align:center;}
+#education{padding:50px 15px 20px 15px;border-bottom:1px solid #009FFD;text-align:center;}
 #education h2{color:#374054;margin-bottom:50px}
 .education-block{max-width:700px;margin:0 auto 30px auto;padding:15px;border:1px solid #dcd9d9;text-align:left; border-radius:10px}
 .education-block h3{font-weight:500;float:left;margin:0;color:#374054}
@@ -127,7 +127,7 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
 .education-block ul{padding:0 0 0 15px}
 
 
-#projects{padding:50px 15px;border-bottom:1px solid #86377b;text-align:center;}
+#projects{padding:50px 15px;border-bottom:1px solid #009FFD;text-align:center;}
 #projects h2{color:#374054;margin-bottom:50px}
 
 .project{position:relative;max-width:900px; margin:0 auto 30px auto;overflow:hidden;background:#fff;border-radius:4px;height: 200px}
@@ -164,15 +164,15 @@ body{font-family:'Lato', sans-serif;font-size:16px}body.active{overflow:hidden;z
  #skills h2{color:#374054;margin-bottom:40px}
  #skills ul{display:block;margin:0 auto;padding:0;max-width:1000px}
  #skills li{display:inline-block;margin:7px;padding:5px 10px;color:#374054;background:#e4e4ea;list-style:none;cursor:default;font-size:1.2em}
- #skills li:hover{display:inline-block;margin:7px;padding:5px 10px;color:white;background:#732f69;list-style:none;cursor:default;font-size:1.2em}
+ #skills li:hover{display:inline-block;margin:7px;padding:5px 10px;color:white;background:#2A2A72;list-style:none;cursor:default;font-size:1.2em}
 
 
 
- #contact{padding:50px 15px;background:#86377b;text-align:center}
+ #contact{padding:50px 15px;background:#009FFD;text-align:center}
  #contact h2{margin:0 0 15px 0;color:#fff;font-weight:500}
  #contact-form{max-width:500px;margin:0 auto}
  #contact-form input,
- #contact-form textarea{display:block;width:100%;padding:10px;border-radius:4px;border:none;margin-bottom:10px;background:#732f69;color:#fff;transition:.5s ease all}
+ #contact-form textarea{display:block;width:100%;padding:10px;border-radius:4px;border:none;margin-bottom:10px;background:#4c6ea8;color:#fff;transition:.5s ease all}
  #contact-form input::-webkit-input-placeholder,
  #contact-form textarea::-webkit-input-placeholder{color:#fff}
  #contact-form input:-moz-placeholder,
