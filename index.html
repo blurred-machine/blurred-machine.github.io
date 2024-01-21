@@ -1,883 +1,348 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-    <meta name="description" content="Paras Varshney">
-    <meta name="keywords" content="Paras Varshney, Data Science, Machine Learning, blurredmachine">
-    <meta name="author" content="Paras Varshney">
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <!-- <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Paras Varshney</title>
-	<link rel="shortcut icon" href="images/pv_title_image.png" type="image/x-icon">
-	<link rel="icon" href="images/pv_title_image.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style_bg.css">
+        <title>Paras Varshney</title>
+        <link rel="shortcut icon" href="assets/img/base_icon.png" type="image/x-icon">
+        <link rel="icon" href="assets/img/base_icon.png" type="image/x-icon">
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Paras</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#collaborations" class="nav__link">Collaborations</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#gallery" class="nav__link">Gallery</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Paras</span><br> Data Scientist</h1>
+
+                    <a href="https://drive.google.com/file/d/1zg-ho9auKF__YygbBRhBHs7xf_WScqtW/view?usp=sharing" class="button">Resume</a>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/blurred-machine/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://medium.com/@blurred-machine" class="home__social-icon"><i class='bx bxl-medium' ></i></a>
+                    <a href="https://github.com/blurred-machine" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="50" y="60" href="assets/img/me.png"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/about_main.png" alt="" style="width: 80%; object-fit: cover;">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">I'am Paras</h2>
+                        <p class="about__text" style="text-align: justify;">I'm Paras Varshney, a data scientist experienced in data exchange platforms. I contributed to LogicAI and IUDX at IISc Bangalore, focusing on large-scale data management and analytics. Key roles include organizing KaggleDays x Z by HP Data Science Championships 2022. With a Bachelor's in Computer Science, a Kaggle Master, and publications in Towards Data Science, I'm currently pursuing a Master's in Data Science at Northeastern University. I gained industry experience as a data science intern at Beyond Limits in LA. Passionate about learning, I balance professional pursuits with interests like guitar, speedcubing, and travel.</p>           
+                    </div>
+                </div>
+                
+                <br>
+
+                <div class="about__container bd-grid">
+                    <div>
+                        <h2 class="about__subtitle">A Global Data Science Ambassador</h2>
+                        <p class="about__text" style="text-align: justify;">
+                            Embraced as one of the dynamic 16 global data science ambassadors proudly associated with Z by HP. Delved into the realm of cutting-edge data science on workstations crafted exclusively for data maestros by HP. Ventured into exhilarating competitions on Kaggle, showcasing my prowess. Took center stage at prestigious global events, including being a featured speaker at the NVIDIA GTC AI Conference in 2021 and the ODSC West Conference in 2022.
+                        </p>
+                        
+                    </div>
+                
+                    <div class="about__img" style="text-align: right; margin-left: 20%;">
+                        <img src="assets/img/about_zbyhp.jpg" alt="" style="width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work__container bd-grid">
+                    <a target="_blank" href="https://ece.northeastern.edu/fac-ece/purnima/LARS.html" class="work__img">
+                        <img src="assets/img/neu_logo.png" alt="">
+                        <h4 class="work_card_header">AI Research Assistant</h4>
+                        <p class="work_card_text">Northeastern University, MA <br>Ocean Acoustics Sound Engineering Lab</p>
+                        <h6 class="work_card_footer">Feb '23 - Present (1 year)</h6>
+                    </a>
+
+                    <a target="_blank" href="https://www.beyond.ai/" class="work__img">
+                        <img src="assets/img/bl_logo.png" alt="">
+                        <h4 class="work_card_header">Data Science Intern</h4>
+                        <p class="work_card_text">Beyond Limits, CA <br>Auto Account Code Recommendation</p>
+                        <h6 class="work_card_footer">Jun '23 - Aug '23 (Summer Internship)</h6>
+                    </a>
+
+                    <a target="_blank" href="https://www.hp.com/de-de/workstations/industries/data-science/ambassador-paras-varshney.html" class="work__img">
+                        <img src="assets/img/hp_logo.png" alt="">
+                        <h4 class="work_card_header">Data Science Ambassador</h4>
+                        <p class="work_card_text">Hewlett-Packard, CO <br>Solving Most Challenging Kaggle Problems</p>
+                        <h6 class="work_card_footer">Sep '20 - Oct '23 (3 years)</h6>
+                    </a>
+
+                    <a target="_blank" href="https://logicai.io/" class="work__img">
+                        <img src="assets/img/logicai_logo.png" alt="">
+                        <h4 class="work_card_header">Data Scientist</h4>
+                        <p class="work_card_text">LogicAI, PL <br>Led KaggleDays Global Championship</p>
+                        <h6 class="work_card_footer">Sep '21 - Sep '22 (1 year)</h6>
+                    </a>
+
+                    <a target="_blank" href="https://iudx.org.in/" class="work__img">
+                        <img src="assets/img/iudx_logo.png" alt="">
+                        <h4 class="work_card_header">Data Scientist</h4>
+                        <p class="work_card_text">IUDX, IISc. Bangalore, IN <br>Smart Cities real-time dataflow pipelines</p>
+                        <h6 class="work_card_footer">Sep '20 - Sep '21 (1 year)</h6>
+                    </a>
+
+                    <a target="_blank" href="https://illumnus.com/" class="work__img">
+                        <img src="assets/img/illumnus_logo.png" alt="">
+                        <h4 class="work_card_header">Mobile AI Researcher</h4>
+                        <p class="work_card_text">Illumnus Education, IN <br>Android AI Attendance and Proctoring</p>
+                        <h6 class="work_card_footer">Mar '20 - Sep '20 (6 months)</h6>
+                    </a>
+
+                </div>
+            </section>
 
 
+            <!--===== COLLABORATIONS =====-->
+            <section class="work section" id="collaborations">
+                <h2 class="section-title">Collaborations</h2>
 
-</head>
+                <div class="work__container bd-grid">
+                    <a target="_blank" href="https://gtc21.event.nvidia.com/media/Z%20by%20HP%20Data%20Science%20Remote%20Collaboration%20and%20Software%20Stack%20Implementation%20(Presented%20by%20Z%20by%20HP)%20%5BSS32084%5D/1_aghnyfrp" class="work__img">
+                        <img src="assets/img/nvidia_logo.png" alt="">
+                        <h4 class="work_card_header">Speaker</h4>
+                        <p class="work_card_text">NVIDIA GTC AI Conference 2021<br><b>TOPIC:</b> Acing the Most Challenging Kaggle's AI Problems</p>
+                        <h6 class="work_card_footer">Apr '21</h6>
+                    </a>
 
-<body>
-    
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_conferences-datascience-software-activity-6973020120730230784-ciEK?utm_source=share&utm_medium=member_desktop" class="work__img">
+                        <img src="assets/img/odsc_logo.png" alt="">
+                        <h4 class="work_card_header">Speaker</h4>
+                        <p class="work_card_text">ODSC West Conference 2021<br><b>TOPIC:</b> Data Science Remote Collaboration using ZbyHP's Software Stack</p>
+                        <h6 class="work_card_footer">Oct '22</h6>
+                    </a>
 
-    <div id="lead">
+                    <a target="_blank" href="https://www.kaggle.com/kagglex" class="work__img">
+                        <img src="assets/img/kaggle_logo.png" alt="">
+                        <h4 class="work_card_header">Mentor</h4>
+                        <p class="work_card_text">KaggleX BIPOC Grants Program<br><b>TOPIC:</b> Supported Data Science Education in BIPOC community</p>
+                        <h6 class="work_card_footer">July '23</h6>
+                    </a>
 
-    	<!-- <a href="https://parasvarshney.ml/" target="_blank">
-    		<img style="height: 80px; width: 80px;   border-radius: 50%; background: gray;" src="images/bg.jpg" alt="Paras Varshney Website">
-		</a> -->
+                    <a target="_blank" href="https://medium.com/@blurred-machine" class="work__img">
+                        <img src="assets/img/medium_logo.png" alt="">
+                        <h4 class="work_card_header">Author</h4>
+                        <p class="work_card_text">Article Writer at Medium<br><b>TOPIC:</b> Writes about Machine Learning, Data Science and Statistics</p>
+                        <h6 class="work_card_footer">Since Apr '20</h6>
+                    </a>
 
-	</div>
+                    <a target="_blank" href="https://neu.campuslabs.com/engage/organization/ds-hub-northeastern" class="work__img">
+                        <img src="assets/img/dsh_logo.png" alt="">
+                        <h4 class="work_card_header">President</h4>
+                        <p class="work_card_text">The Data Science Hub, Northeastern<br><b>TOPIC:</b> Leading student DS Community of over 1200+ members</p>
+                        <h6 class="work_card_footer">Since Sep '22</h6>
+                    </a>
 
+                    <a target="_blank" href="https://neu.campuslabs.com/engage/organization/ds-hub-northeastern" class="work__img">
+                        <img src="assets/img/eai_logo.png" alt="">
+                        <h4 class="work_card_header">Speaker</h4>
+                        <p class="work_card_text">Institute of Experimental AI, Boston<br><b>TOPIC:</b> Delivered a talk on the best resume practices for Data Scientists</p>
+                        <h6 class="work_card_footer">Oct '23</h6>
+                    </a>
+                </div>
+            </section>
+            
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
 
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle">Professional Skills</h2>
+                        <!-- <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p> -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs-data skills__icon'></i>
+                                <span class="skills__name">Data Science</span>
+                            </div>
+                            <div class="skills__bar skills__datascience">
 
-    <!-- partial:index.partial.html -->
-<div class="waveWrapper waveAnimation">
-    <img src="./images/wall.JPG" alt="background images" width="2500px" style="opacity: 0.7;">
-
-  <div class="waveWrapperInner bgTop">
-
-      <!-- <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div> -->
-
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#blogs">Blogs</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
-
-     <div id="lead-content">
-            <!-- My main title name get typed here: PARAS VARSHNEY -->
-            <h1 id="typing_title"></h1>
-
-            <!-- main description gets typed here: Data Scientist 👨‍🔬 -->
-            <h2 id="typing_description" style="color: white;"></h2>
+                            </div>
+                            <div>
+                                <span class="skills__percentage">95%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bx-camera skills__icon'></i>
+                                <span class="skills__name">Computer Vision</span>
+                            </div>
+                            <div class="skills__bar skills__cv">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs-user-voice skills__icon' ></i>
+                                <span class="skills__name">Natural Language Processing</span>
+                            </div>
+                            <div class="skills__bar skills__nlp">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs-cloud skills__icon'></i>
+                                <span class="skills__name">MLOps</span>
+                            </div>
+                            <div class="skills__bar skills__mlops">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>              
+                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>
 
 
             
-<!-- here comes the javascript for typewriting -->
+            <!--===== GALLERY =====-->
+            <section class="work section" id="gallery">
+                <h2 class="section-title">Gallery</h2>
 
+                <div class="work__container bd-grid" style="height: 80%;">
+                    <a target="_blank" href="https://www.linkedin.com/feed/update/urn:li:activity:7047160538404896768" class="gallery__img">
+                        <img src="assets/img/about_zbyhp.jpg" alt="">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_datascience-northeastern-data-activity-7125923437482520577-8npz" class="gallery__img">
+                        <img src="assets/img/dsh_talk1.jpeg" alt="">
+                    </a>
+                    <a target="_blank" target="_blank" href="https://www.linkedin.com/posts/blurred-machine_datascience-ai-job-activity-7121227357759107072-jZPN" class="gallery__img">
+                        <img src="assets/img/eai_talk_1.jpeg" alt="">
+                    </a>
 
-            <a href="files/paras_varshney_resume.pdf" target="_blank" class="btn-rounded-white" style="background-color: #44a6c6;">Download Resume</a>
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_datascienceinternship-beyonders2023-beyondlimits-activity-7074184362165981185-triB" class="gallery__img">
+                        <img src="assets/img/bl_pic.png" alt="">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_internship-beyond-completed-activity-7098922586595627008-6JOi" class="gallery__img">
+                        <img src="assets/img/bl_team.png" alt="">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_zbyhp-psunleashed-conference-activity-7042150655469178882-LLbK" class="gallery__img">
+                        <img src="assets/img/hp_denver.jpeg" alt="">
+                    </a>
+
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_psunleashed-zbyhp-psunleashed-activity-7046522233103507456-HLbx" class="gallery__img">
+                        <img src="assets/img/zbyhp_talk.jpeg" alt="">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_datasciencehub-dsh-datathon-activity-7127191628707946497-yICR" class="gallery__img">
+                        <img src="assets/img/dsh_winners.jpeg" alt="">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/posts/blurred-machine_datasciencehub-dsh-datathon-activity-7043599131470127104-rlys" class="gallery__img">
+                        <img src="assets/img/datathon_winners2.jpeg" alt="">
+                    </a>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="https://formspree.io/f/mgegowrd" method="post" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="mail" placeholder="Email" class="contact__input">
+                        <textarea type="text" name="" id="" cols="0" rows="5" class="contact__input"></textarea>
+                        <input type="submit" value="Send" class="contact__button button">
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Paras Varshney</p>
+            <div class="footer__social">
+                <a target="_blank" href="https://www.linkedin.com/in/blurred-machine/" class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
+                <a target="_blank" href="https://www.instagram.com/blurred_machine/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a target="_blank" href="https://twitter.com/blurred_machine" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; BlurredMachine. All rights reserved</p>
 
             <div class="container">
-                <div class="row">
-                    <div class="social-main">
-                         <ul>
-                            <li>
-                                <a href="https://github.com/blurred-machine" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/blurred-machine" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.kaggle.com/blurredmachine" target="_blank"><i class="fab fa-kaggle" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://blurred-machine.medium.com" target="_blank"><i class="fab fa-medium" aria-hidden="true"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/blurred_machine" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            </li>                    
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- <div id="lead-overlay"></div> -->
-
-
-
-    <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-  </div>
-  <div class="waveWrapperInner bgMiddle">
-    <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-  </div>
-  <div class="waveWrapperInner bgBottom">
-    <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-  </div>
-</div>
-<!-- partial -->
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me ⚡</h2>
-                    <p style="text-align: justify; text-justify: inter-word;"> 
-                        <b>INTERESTS:</b><br/>
-
-                        • Machine Learning <br>
-                        • Data Science<br/>
-                        • Deep Learning<br/>
-                        • Table Tennis <br/>
-                        • Speed Cuber (40s) <br/>
-                        • Fitness & Travelling <br/>
-                        <br/>
+                <div>
+                    <p style="color: rgb(226, 226, 226);"><a style="color: rgb(226, 226, 226);" href="https://github.com/blurred-machine/blurred-machine.github.io/blob/master/LICENSE">Copyright</a> &copy; 2020-24 made with ❤️ by <a style="color: rgb(226, 226, 226);" href="#">Paras Varshney</a>
                     </p>
                 </div>
-                <div class="col-md-8">
-                    <div class="row">
-                         <div class="col-md-12">
-                            <p style="text-align: justify; text-justify: inter-word;" id="typing_about_main">  
-                                Paras Varshney is a preeminent data scientist with a wealth of experience in research and development. He has been affiliated with leading organizations such as <strong>LogicAI (KaggleDays)</strong> and the <strong>IUDX Programme Unit</strong> at the <strong>Indian Institute of Science (IISc) Bangalore</strong>, where he has made significant contributions to the design and implementation of cutting-edge data exchange platforms for smart cities, utilizing advanced technologies such as big data analytics, high-performance data ingestion pipelines with large-scale data inflow comparable to that of Twitter. He possesses a thorough understanding of the complexities involved in creating and executing comprehensive <strong>data science deep learning workflows</strong>. Additionally, he has played a vital role in organizing and managing data science competitions for the globally recognized &quot;<strong>KaggleDays x Z by HP Data Science Championships 2022</strong>&quot;, developing competitions on Kaggle and directing the execution of the data competitions on a global scale. Paras has also been featured as a speaker at the esteemed <strong>NVIDIA GTC AI Conference 2021</strong> as well as <strong>ODSC West 2022</strong>.
-                            </p>
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p style="text-align: justify; text-justify: inter-word;" id="typing_about_c1">
-                                Paras holds a <strong>Bachelor&apos;s degree </strong>in <strong>Computer Science </strong>and Engineering from the <strong>Indian Institute of Information Technology </strong>and has achieved a <strong>Master tier on Kaggle</strong>. Additionally, he has published works in <strong>Towards Data Science (TDS)</strong> and has experience in mentoring junior coders in developing their programming skills through the means of an open-source community.
-                            </p>
-                        </div>
-
-                        <div class="col-md-6">
-                            <p style="text-align: justify; text-justify: inter-word;" id="typing_about_c2">
-                                In his free time, Paras enjoys <strong>playing</strong> <strong>guitar</strong>, as well as <strong>speedcubing</strong>. He is also an avid traveler and enjoys exploring new terrains. He is currently pursuing his <strong>Master&apos;s at Northeastern University</strong> until April 2024. He is passionate about data science and technology and is dedicated to continuously learning and exploring new technologies in the field.
-                            </p>
-                        </div>
-
-                        <!-- <div class="col-md-4">
-                            <p style="text-align: justify; text-justify: inter-word;" id="typing_about_c3">
-                        In my professional career👨‍💼, this passion stays with me all the time and brought to me the dedication to achieve🎯 what I am looking for. This being the tip of an iceberg🏔️, there is still a long way to go and learn📖 from each step in life. I wish to follow this passion for my entire life. <br/><br/>
-                    </p>
-                        </div> -->
-                    </div>                    
-                    
-                </div>
             </div>
-        </div>
-    </div>
-    <!-- End #about -->
+        </footer>
 
 
 
 
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-
-
-            <div data-date="Sept. 2021 – Aug. 2022" class="experience-box">
-                <table width="100%" style="margin: 0px;">
-                    <tbody width="100%" style="margin: 0px;">
-                        <tr>
-                            <th width="100%" style="margin: 0px;"><h3><b>LogicAI</b>, Poland</h3></th>
-                            <th width="100%" style="margin: 0px;">
-                                <a href="https://logicai.io/" target="_blank">
-                                    <img src="images/xp/logicai_logo.png" style="width:90px;">
-                                </a>
-                            </th>
-                            <th>
-                                <a href="https://kaggledays.com/" target="_blank">
-                                    <img src="images/xp/kaggledays_logo.png" style="margin-left: 20px; width:90px; margin-top: 12px;">
-                                </a>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <h4><b>Data Scientist</b></h4>
-                <p style="text-align: justify; text-justify: inter-word;">
-                    • Spearheaded launch of &quot;<strong>KaggleDays x Z by HP Global Championship</strong>&quot;, resulting in <strong>13 </strong>successful global data science meetups and a community of over <strong>12M data scientists</strong>. Improved competition participation by <strong>80% </strong>and received recognition as one of the topmost Kaggle communities globally.<br><br>
-                    • Developed and implemented efficient data processing modules and cutting-edge training pipelines on Kaggle, boosting data flow automation by <strong>1.4x</strong> to serve top-ranked <strong>grandmasters</strong> <strong>worldwide</strong>. Provided mentorship to manage event back-end, leading to a <strong>95%</strong> satisfaction rate among participants.
-                </p>    
-                <div id="exp_skills">
-                    <ul>
-                        <li>Python</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Data Analysis</li>
-                        <li>Deep Learning</li>
-                        <li>Competition Development</li>
-                        <li>Machine Learning</li>
-                        <li>Project Management</li>
-                        <li>Event Planning</li>
-                        <li>Community Building</li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-            <div data-date="Sept. 2020 – Sept. 2021" class="experience-box">
-                <table width="100%" style="margin: 0px;">
-                    <tbody width="100%" style="margin: 0px;">
-                        <tr>
-                            <th width="100%" style="margin: 0px;"><h3><b>India Urban Data Exchange</b>, IISc. Bangalore</h3></th>
-                            <th width="100%" style="margin: 0px;">
-                                <a href="https://www.iudx.org.in/" target="_blank">
-                                    <img src="images/xp/iudx_logo.png" style="width:80px;">
-                                </a>
-                            </th>
-                            <th>
-                                <a href="https://www.iisc.ac.in/" target="_blank">
-                                    <img src="images/xp/iisc_logo.png" style="margin-left:5px; width:60px;">
-                                </a>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <h4><b>Data Scientist</b></h4>
-                <p style="text-align: justify; text-justify: inter-word;">
-                    • Constructed an end-to-end<strong>&nbsp;open-source ITMS-focused data ingestion pipeline</strong> using Apache Flink and Spark, with a messaging queue to pre-process data before warehousing. The pipeline processed <strong>900k</strong> data points per minute from <strong>5 major smart cities</strong> and communicated insights through an analytical dashboard using <strong>Superset</strong> for effective decision-making. <br><br>
-                    • Predicted public transportation Estimated Time of Arrival with deep neural network models, achieving an <strong>R2 score</strong> of <strong>0.93</strong> on <strong>unstructured data</strong>. The pipeline was optimized for the <strong>real-time processing&nbsp;</strong>of high-throughput messages.
-                    
-                    
-                </p>
-                <div id="exp_skills">
-                    <ul>
-                        <li>Python</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Data Analysis</li>
-                        <li>Machine Learning</li>
-                        <li>H2o</li>
-                        <li>Tableau</li>
-                        <li>Superset</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-            </div>  
-
-
-            <div data-date="May 2019 – October 2019" class="experience-box">
-            	<table width="100%" style="margin: 0px;">
-                    <tbody width="100%" style="margin: 0px;">
-    				    <tr>
-        				    <th width="100%" style="margin: 0px;"><h3><b>Illumnus Education</b>, Pune</h3></th>
-        				    <th>
-        				    	<a href="https://illumnus.com/" target="_blank">
-        				    		<img src="images/xp/illumnus_horizontal.png" style="width:100px;">
-        				    	</a> 
-        				    </th>
-    				    </tr>
-                    </tbody>
-				</table>
-      
-                <h4><b>Mobile Engineer & Data Science Intern</b></h4>
-                <p style="text-align: justify; text-justify: inter-word;">
-                    Illumnus is building a SaaS-based cloud ecosystem for educational institutes on the Android platform for Real-time Collaboration. Implemented Search Engine, Optimized Push Notifications using GCM & Firebase, Assignment Creating, Submission & Grading, Optical Bar code Detector, Performance Data Analysis & Administration Visualizations. Built a Recommendation System for teachers to get content sharing recommendations for students based on their teaching pattern.
-                </p>
-                <div id="exp_skills">
-	                <ul>
-	                	<li>Kotlin</li>
-	                	<li>Android Studio</li>
-	                	<li>API</li>
-	                	<li>Git</li>
-	                	<li>Firebase</li>
-	                	<li>MVVM</li>
-	                	<li>Analytics</li>
-	                	<li>Recommendation System</li>
-	                </ul>
-	            </div>
-            </div>
-
-            <div data-date="May 2018 – July 2018" class="experience-box">
-				<table width="100%" style="margin: 0px;">
-                    <tbody width="100%" style="margin: 0px;">
-				        <tr>
-        				    <th width="100%" style="margin: 0px;"><h3><b>Magicbricks</b>, Noida</h3></th>
-        				    <th>
-        				    	<a href="https://www.magicbricks.com/" target="_blank">
-        				    		<img src="images/xp/mb_logo.jpg" style="width:120px;">
-        				    	</a>
-        				    </th>
-				        </tr>
-                    </tbody>
-				</table>
-
-                <h4><b>Android Developer Intern</b></h4>
-                <p style="text-align: justify; text-justify: inter-word;">
-                   At Magicbricks I have worked as an Android Developer Intern mentored by Mr. Dhiraj Kumar. Contributed to the Text Recognition Classified in Magicbricks Android Application. Major work fields include Optical Character Recognition API, Location Tracking, Map Clustering, AutoComplete API, Canvas Animations, Battery Usage Optimization, Android Permissions library, Deep Link and Firebase.
-                </p>
-
-                <div id="exp_skills">
-	                <ul>
-	                	<li>Java</li>
-	                	<li>Android Studio</li>
-	                	<li>API</li>
-	                	<li>Git</li>
-	                	<li>Gradle</li>
-	                	<li>Firebase</li>
-	                	<li>Computer vision</li>
-	                </ul>
-	            </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="education">
-        <h2 class="heading">Education 🏫</h2>
-
-        <div class="education-block shadow-large">
-            <h3>Northeastern University</h3>
-            <span class="education-date">April 2024</span>
-            <h4>Candidate for Master of Science in Data Analytics Engineering</h4>
-            <p>
-                <ul>
-                <li>Vice President at Data Science Hub, Northeastern</li>
-                <li>GPA: 3.86 (semester 1)</li>
-                </ul>
-                
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block shadow-large">
-            <h3>Indian Institute of Information Technology</h3>
-            <span class="education-date">June 2020</span>
-            <h4>Bachelor of Technology in Computer Engineering</h4>
-            <p>
-                <ul>
-                   <li>Graduated with a CGPA of <b>9.06/10</b>.</li>
-                <li>Scored <b>Rank 1</b> 🥇 in first semester across all streams.</li>
-                <li><b>Cödigo club</b> coordinator with active contributions.</li>
-                <li><b>President</b> at <b>Cultural & Social Affairs Society</b>  2018-19.</li>
-                </ul>
-                
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block shadow-large">
-            <h3>Radiant Stars English School</h3>
-            <span class="education-date">April 2013 - April 2015</span>
-            <h4>Senior Secondry School</h4>
-            <ul>
-            	<li>Passed Intermediate +2 (CBSE board) with <b>91.4%</b>.</li>
-                <li>School Topper <b>Rank 1</b>🥇 across all streams.</li>
-                <li>Mathematics Olympiad <b>City Rank 1</b>🥇.</li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block shadow-large">
-            <h3>Our Lady of Fatima School</h3>
-            <span class="education-date">April 2001 - April 2013</span>
-            <h4>Higher Secondry School</h4>
-            <ul>
-            	<li>Passed High School (CBSE board) with <b>10/10 CGPA</b>.</li>
-                <li>School Topper <b>Rank 1</b>🥇 gold medalist.</li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects 🚧</h2>
-       <!--  <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div> -->
-		<br/><b>(My Projects load dynamically. I am too lazy to add them one by one!)</b><br/><br/><br>
-        <div id="container-projects"></div>
-            
-
-            <div class="container-fluid">
-            	<div class="row">
-
-            		<div class="col-sm-4">
-            		</div>
-
-					<div class="col-sm-4">
-						<a href="https://github.com/blurred-machine/" target="_blank" class="btn-rounded-blue" style="color:#44a6c6; min-width: 180px; margin-top: 20px;">My GitHub</a>
-					</div>
-
-					<div class="col-sm-4">
-						<!-- <a href="https://sourcerer.io/blurred-machine" target="_blank" class="btn-rounded-blue" style="color:#44a6c6; min-width: 180px;  margin-top: 20px;">My Sourcerer</a> -->
-					</div>
-
-					<div class="col-sm-3">
-					</div>
-
-				</div>
-            </div>
-
-            
-    </div>
-    <!-- End #projects -->
-
-
-        <script>
-
-              let request = new XMLHttpRequest();
-              const base_url = "https://api.github.com/users/blurred-machine/repos"
-              const per_page = 50
-              const page_number = 1
-              const sorting = "pushed"
-
-              var total_commits = 0
-
-              const link_repo = "https://github.com/blurred-machine/"
-              request.open("GET", base_url+"?per_page="+per_page+"&page="+page_number+"&sort="+sorting);
-              request.send();
-              request.onload = () => {
-                console.log(request);
-                if (request.status === 200) {
-                  const obj = JSON.parse(request.response);
-                    var data_size = obj.length;
-
-                // set data to be even to fit into all the blocks.
-                if (data_size % 2 == 1){
-                    data_size -= 1;
-                }
-                // $('#container-me').html(obj[0].title);
-
-
-                // creating a new object which only loads repos with high stars
-                const new_obj = [];
-                const min_stars = 4
-                const min_repo_size = 500
-
-                for(i=0; i<data_size; i++){
-                    if(obj[i].stargazers_count > min_stars){
-                        if (obj[i].size > min_repo_size){
-                            new_obj.push(obj[i])
-                        }
-                    }
-                }
-
-                // sorting newly created object.
-                new_obj.sort((a, b) => {
-                    return b.stargazers_count - a.stargazers_count;
-                });
-
-                // setting size for the objects to be loaded on the website (max 10)
-                if(new_obj.length > 10){
-                    var new_data_size = 10
-                }else{
-                    var new_data_size = new_obj.length;
-                }
-
-                for(i = 0;i<new_data_size;i+=2){
-
-                    document.getElementById("container-projects").innerHTML += "<div id=proj-inner-"+i+"></div>";
-                    
-                    var name_list1 = new_obj[i].name.split("-");
-                    var proj_name1 = name_list1.join(' ')
-                    
-                    var name_list2 = new_obj[i+1].name.split("-");
-                    var proj_name2 = name_list2.join(' ')
-
-                    var stargazers_count1 = new_obj[i].stargazers_count
-                    var stargazers_count2 = new_obj[i+1].stargazers_count
-
-                    const markup = `
-                        <div class="container">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="project shadow-large">
-                                            <div class="project-image">
-                                                <img src="images/github_octocat.png" />
-                                            </div>
-                                            <div class="project-info">
-                                                <h3>${proj_name1} &nbsp; &nbsp; ${stargazers_count1}⭐</h3>
-                                                <p style="text-align: justify;">
-                                                    ${new_obj[i].description} <br>(Language: ${new_obj[i].language})<br>
-                                                </p>
-                                                <hr/>
-                                                <a style="color:#44a6c6;" href="${link_repo}${new_obj[i].name}" target="_blank">View Project</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="project shadow-large">
-                                            <div class="project-image">
-                                                <img src="images/github_octocat.png" />
-                                            </div>
-                                            <div class="project-info">
-                                                <h3>${proj_name2} &nbsp; &nbsp; ${stargazers_count2}⭐</h3>
-                                                <p style="text-align: justify;">
-                                                    ${new_obj[i+1].description} <br>(Language: ${new_obj[i+1].language})<br>
-                                                </p>
-                                                <hr/>
-                                                <a style="color:#44a6c6;" href="${link_repo}${new_obj[i+1].name}" target="_blank">View Project</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    `;
-
-                    document.getElementById("proj-inner-"+i).innerHTML = markup;
-                    
-                }
-
-
-
-                } else {
-                  console.log(`error ${request.status} ${request.statusText}`);
-                }
-              };
-
-
-            fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                return res.text();
-            })
-            .then(data => {
-                
-    });         
-        </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <div id="blogs">
-        <h2 class="heading">Blogs✍</h2>
-        <!-- <p><b>(Coming soon)<br/> Meanwhile Read my blogs <u><a style="color: #86377b;" href="https://medium.com/@blurred_machine">HERE.</a></u></b></p> -->
-        <div class="container-fluid">
-
-        <div class="row">
-
-	        <div class="col-sm-3">
-	        	<a href="https://towardsdatascience.com" target="_blank">
-				    <div class="card">
-				      <img id="blog_banner" src="images/blogs/tds.png" height="100" width="100">
-				      <h3 style="color: black;">Towards Data Science</h3>
-				    </div>
-				</a>
-			</div>
-
-			<div class="col-sm-3">
-				<a href="https://medium.com/swlh" target="_blank">
-				    <div class="card">
-				      <img id="blog_banner" src="images/blogs/the_startup_green.jpeg" height="100" width="100">
-				      <h3 style="color: black;">The Startup</h3>
-				    </div>
-				</a>
-			</div>
-
-			<div class="col-sm-3">
-				<a href="https://medium.com/analytics-vidhya" target="_blank">
-				    <div class="card">
-				      <img id="blog_banner" src="images/blogs/av.jpeg" height="100" width="100">
-				      <h3 style="color: black;">Analytics Vidya</h3>
-				    </div>
-				</a>
-			</div>
-
-			<div class="col-sm-3">
-				<a href="https://medium.com/datadriveninvestor" target="_blank">
-				    <div class="card">
-				      <img id="blog_banner" src="images/blogs/ddi.png" height="100" width="100">
-				      <h3 style="color: black;">Data Driven Investor</h3>
-				    </div>
-				</a>
-			</div>
-
-		</div> <!-- row close -->
-
-
-
-
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
-				<a href="https://blurred-machine.medium.com" target="_blank" class="btn-rounded-blue" style="color:#44a6c6; margin-top: 20px; min-width: 180px;">My Medium</a>
-			</div>
-			<div class="col-sm-4">
-				<!-- <a href="http://blurredmachine.ml/" target="_blank" class="btn-rounded-blue" style="color:#44a6c6; margin-top: 20px; min-width: 180px;">My Blogs Site (maintenance)</a> -->
-			</div>
-			<div class="col-sm-4"></div>
-		</div>  
-			<!-- <div class="row">
-				<div class="col-sm-12">
-					<a href="https://medium.com/@blurred_machine" target="_blank" class="btn-rounded-blue" style="color:#44a6c6; margin-top: 50px; min-width: 250px;">Read my Blogs @ Medium</a>
-				</div>
-			</div> -->
-
-
-
-	</div> <!-- container-fluid close here -->
-
-
-
-        <div id="container-blogs"></div>
-    </div>
-
-<!-- <script type="text/javascript">
-    var content = document.getElementById('container-blogs');
-	const RSS_URL = `https://medium.com/@blurred_machine`;
-
-	fetch(RSS_URL)
-	  .then(response => response.text())
-	  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-	  .then(data => console.log(data))
-
-</script> -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="skills" class="background-alt">
-        <h2 class="heading">Skills 🤹</h2>
-        <ul>
-            <li>Python</li>
-            <li>R Programming</li>
-            <li>C/C++</li>
-            <li>Java8</li>
-
-            <li>Machine learning</li>
-            <li>Statistical Analysis</li>
-            <li>Neural Networks</li>
-            <li>Deep Learning</li>
-
-            <li>pandas</li>
-            <li>numPy</li>
-            <li>matplotlib</li>
-            <li>Scikit-Learn</li>
-            <li>seaborn</li>
-            <li>openCV</li>
-            <li>TensorFlow</li>
-            <li>Keras</li>
-
-            <li>Pycharm</li>
-            <li>Jupyter Notebooks</li>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Android Studio</li>
-            <li>Firebase</li>
-            <li>Apache Superset</li>
-            <li>Microsoft Power BI</li>
-            <li>Tableau</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="contact">
-        <h2>Get In Touch 📧</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/xoqneyvn">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="_replyto" placeholder="Email" required>
-                <textarea name="message" name="_subject" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-
-
-
-
-
-<!-- hitwebcounter Code START -->
-<!-- <div class="container">
-	<div class="row">
-    <div class="copyright">
-			<a href="https://www.hitwebcounter.com" target="_blank">
-			<img src="https://hitwebcounter.com/counter/counter.php?page=7228825&style=0018&nbdigits=5&type=page&initCount=125" title="User Stats" Alt="PHP Hits Count"   border="0" >
-			</a>     
-	</div>
-	</div>
-</div> -->
- 
-
-
-
-
-
-
-
-
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p style="color: gray;"><a style="color: gray;" href="https://github.com/blurred-machine/blurred-machine.github.io/blob/master/LICENSE">Copyright</a> &copy; 2020-22 made with ❤️ by <a style="color: gray;" href="#">Paras Varshney</a>
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/blurred-machine" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/blurred-machine" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.kaggle.com/blurredmachine" target="_blank"><i class="fab fa-kaggle" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                                <a href="https://blurred-machine.medium.com" target="_blank"><i class="fab fa-medium" aria-hidden="true"></i></a>
-                            </li>
-                        <li>
-                            <a href="https://twitter.com/blurred_machine" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/blurredmachine" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/blurred_machine" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
-
-
-
-
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-    <script src="js/typewriting.js"></script>
-</body>
-
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>

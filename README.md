@@ -1,12 +1,14 @@
-# blurred-machine.github.io
-My portfolio websiteHey! It feels awesome to have you here! This is my personal portfolio website which says a lot about me. You can know me better and yes please don't hesitate to Get in Touch with me. I would love to hear from you! Website is under development so feel free to make a PR. Thanks!
+# Portfolio Responsive Complete
+## [Watch it on youtube](https://youtu.be/AKNvTxWOdKw)
+### Portfolio Responsive Complete
 
+- Responsive Personal Portfolio Website HTML CSS & JavaScript.
+- Contains animations when scrolling.
+- Smooth scrolling in each section.
+- Developed first with the Mobile First methodology, then for desktop.
+- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-## Themes 
-Currently the following two themes are available for the the portfolio website:
+💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
 
-<img src="https://github.com/blurred-machine/blurred-machine.github.io/blob/master/images/readme_images/purple_ss.png" width=500>
-<img src="https://github.com/blurred-machine/blurred-machine.github.io/blob/master/images/readme_images/blue_ss.png" width=500>
+![preview img](/preview.png)
 
-Copyright (c) 2020 Paras Varshney
-Licensed under [MIT License](LICENSE).
