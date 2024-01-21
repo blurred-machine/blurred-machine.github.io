@@ -45,7 +45,7 @@
                 <div class="home__data">
                     <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Paras</span><br> Data Scientist</h1>
 
-                    <a href="https://drive.google.com/file/d/1zg-ho9auKF__YygbBRhBHs7xf_WScqtW/view?usp=sharing" class="button">Resume</a>
+                    <a target="_blank" href="https://drive.google.com/file/d/1zg-ho9auKF__YygbBRhBHs7xf_WScqtW/view?usp=sharing" class="button">Resume</a>
                 </div>
 
                 <div class="home__social">
@@ -307,11 +307,12 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="https://formspree.io/f/mgegowrd" method="post" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea type="text" name="" id="" cols="0" rows="5" class="contact__input"></textarea>
-                        <input type="submit" value="Send" class="contact__button button">
+                    <form action="https://formspree.io/f/mgegowrd" method="POST" class="contact__form">
+                        <label>Your name:<input type="text" name="name" class="contact__input"></label>
+                        <label>Your email:<input type="email" name="email" class="contact__input"></label>
+                        <label>Your message:<textarea name="message" cols="0" rows="5" class="contact__input"></textarea></label>
+                    <!-- your other form fields go here -->
+                    <button type="submit" value="Send" class="contact__button button">Send</button>
                     </form>
                 </div>
             </section>
