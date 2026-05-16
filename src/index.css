@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Global base
+   ============================================================ */
+:root {
+  color-scheme: dark;
+  --nav-h: 100px;
+  --nav-h-scroll: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #0a192f;
+  color: #b8c2da; /* brighter than slate for better readability */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern', 'ss01';
+  scrollbar-width: thin;
+  scrollbar-color: #233554 #0a192f;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #233554;
+  border: 3px solid #0a192f;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #495670;
+}
+
+/* keep anchored sections clear of the fixed nav */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* ============================================================
+   Component utilities (Brittany Chiang-style primitives)
+   ============================================================ */
+@layer components {
+  /* numbered section heading */
+  .numbered-heading {
+    @apply relative flex w-full items-center mb-10 whitespace-nowrap text-lightest-slate;
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .numbered-heading::before {
+    content: counter(section, decimal-leading-zero) '.';
+    counter-increment: section;
+    @apply mr-2.5 text-green font-mono font-normal;
+    font-size: clamp(16px, 3vw, 20px);
+  }
+  .numbered-heading::after {
+    content: '';
+    @apply block ml-5 h-px bg-lightest-navy;
+    width: 300px;
+    max-width: 30%;
+  }
+
+  /* inline link with green underline */
+  .inline-link {
+    @apply relative text-green;
+    transition: color 0.2s ease;
+  }
+  .inline-link::after {
+    content: '';
+    @apply absolute left-0 right-0 -bottom-0.5 h-px bg-green;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .inline-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* green-outlined CTA */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded font-mono text-sm text-green border border-green;
+    padding: 1.05rem 1.65rem;
+    line-height: 1;
+    transition: background-color 0.25s ease, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .btn-outline:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+  }
+
+  /* small mono link button */
+  .btn-mini {
+    @apply font-mono text-xs text-light-slate;
+    padding: 0.7rem 1rem;
+    border: 1px solid #233554;
+    border-radius: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .btn-mini:hover {
+    color: #64ffda;
+    border-color: #64ffda;
+    background: rgba(100, 255, 218, 0.08);
+  }
+}
+
+/* section counter — bumps the 01./02./03. heading numbers */
+main {
+  counter-reset: section;
+}
