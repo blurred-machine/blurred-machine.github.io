@@ -48,10 +48,29 @@ export default function Hero() {
         {HERO.description}
       </motion.p>
 
-      <motion.div {...lineUp(2.7)} className="mt-12">
+      <motion.div {...lineUp(2.7)} className="mt-12 flex flex-wrap items-center gap-3">
         <a href={HERO.cta.href} className="btn-outline">
           {HERO.cta.label}
         </a>
+        {HERO.resumeCta && (
+          <a
+            href={HERO.resumeCta.href}
+            target={HERO.resumeCta.external ? '_blank' : undefined}
+            rel={HERO.resumeCta.external ? 'noopener noreferrer' : undefined}
+            className="group btn-glass-secondary inline-flex items-center gap-2 rounded font-mono text-sm text-light-slate"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-y-0.5">
+              <path
+                d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {HERO.resumeCta.label}
+          </a>
+        )}
       </motion.div>
 
     </section>

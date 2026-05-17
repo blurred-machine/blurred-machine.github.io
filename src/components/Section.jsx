@@ -19,14 +19,11 @@ export default function Section({ id, title, className = '', wide = false, child
       >
         {title}
       </motion.h2>
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.55, delay: 0.1, ease: [0.645, 0.045, 0.355, 1] }}
-      >
-        {children}
-      </motion.div>
+      {/* No motion wrapper here — each section's inner components handle
+          their own reveal animations. The whileInView on a wrapper this
+          high in the tree was flaky on programmatic scroll (would stay
+          stuck at opacity:0). Children render at full opacity by default. */}
+      <div>{children}</div>
     </section>
   );
 }
