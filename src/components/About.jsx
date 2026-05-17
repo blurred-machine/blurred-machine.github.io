@@ -58,7 +58,7 @@ function PhotoFrame() {
                 loading="lazy"
                 onError={() => setPhotoOk(false)}
                 className="block h-full w-full object-cover"
-                style={{ objectPosition: '60% 22%' }}
+                style={{ objectPosition: 'center center' }}
               />
               {/* teal wash by default; fades on hover to reveal the photo */}
               <span className="absolute inset-0 bg-green/30 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0" />
