@@ -88,16 +88,63 @@ section[id] {
     transform-origin: left;
   }
 
-  /* green-outlined CTA */
+  /* green-outlined CTA — glassmorphism: hazy translucent fill so the
+     dotted-mesh background doesn't show through too crisply, with the
+     teal accent retained on border + text */
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 rounded font-mono text-sm text-green border border-green;
     padding: 1.05rem 1.65rem;
     line-height: 1;
-    transition: background-color 0.25s ease, transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-color: rgba(17, 34, 64, 0.55);
+    background-image: linear-gradient(180deg, rgba(100, 255, 218, 0.08) 0%, rgba(100, 255, 218, 0.02) 100%);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 8px 24px -12px rgba(100, 255, 218, 0.35);
+    transition:
+      background-color 0.25s ease,
+      box-shadow 0.3s ease,
+      transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   .btn-outline:hover {
-    background-color: rgba(100, 255, 218, 0.1);
-    transform: translateY(-3px);
+    background-color: rgba(17, 34, 64, 0.7);
+    background-image: linear-gradient(180deg, rgba(100, 255, 218, 0.18) 0%, rgba(100, 255, 218, 0.06) 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 12px 30px -10px rgba(100, 255, 218, 0.55);
+    transform: translateY(-2px);
+  }
+
+  /* secondary glass CTA — same haze as .btn-outline but in the neutral
+     slate palette so it reads as the lower-priority action */
+  .btn-glass-secondary {
+    padding: 1.05rem 1.65rem;
+    line-height: 1;
+    background-color: rgba(17, 34, 64, 0.55);
+    background-image: linear-gradient(180deg, rgba(168, 178, 209, 0.06) 0%, rgba(168, 178, 209, 0.02) 100%);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    border: 1px solid rgba(168, 178, 209, 0.3);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 8px 24px -12px rgba(2, 12, 27, 0.7);
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.3s ease,
+      transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .btn-glass-secondary:hover {
+    color: #64ffda;
+    border-color: rgba(100, 255, 218, 0.7);
+    background-color: rgba(17, 34, 64, 0.7);
+    background-image: linear-gradient(180deg, rgba(100, 255, 218, 0.12) 0%, rgba(100, 255, 218, 0.03) 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 12px 30px -10px rgba(100, 255, 218, 0.35);
+    transform: translateY(-2px);
   }
 
   /* small mono link button */
