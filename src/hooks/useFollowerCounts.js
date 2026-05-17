@@ -287,28 +287,27 @@ export default function useFollowerCounts() {
       // ignore corrupt cache
     }
 
-    // Prefer same-origin JSON (committed by the GitHub Action every 4h) —
-    // it's always reachable in production, has no CORS issues, and reflects
-    // a real server-side fetch. Only fall through to the browser scrapers
-    // if the JSON is missing (e.g. very first deploy before the Action ran).
-    let jsonPayload = null;
-    try {
-      const res = await fetch('/follower-counts.json', { cache: 'no-store' });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.counts && typeof data.counts === 'object') {
-          jsonPayload = data;
-        }
-      }
-    } catch {
-      // ignore — fall back to client scrapers
-    }
-
     const runStrategies = async () => {
       const updates = {};
       const statusUpdates = {};
 
-      // 1) Same-origin JSON wins where it has a value
+      // 1) Prefer same-origin JSON (committed by the GitHub Action every 4h)
+      //    It's always reachable in prod, no CORS, and reflects a real
+      //    server-side fetch. Falls through to browser scrapers below if
+      //    missing (e.g. localhost dev, or before first Action run).
+      let jsonPayload = null;
+      try {
+        const res = await fetch('/follower-counts.json', { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.counts && typeof data.counts === 'object') {
+            jsonPayload = data;
+          }
+        }
+      } catch {
+        // ignore — fall through to client scrapers
+      }
+
       if (jsonPayload) {
         for (const s of SOCIALS) {
           const v = jsonPayload.counts[s.id];
