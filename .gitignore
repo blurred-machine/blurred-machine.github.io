@@ -13,3 +13,9 @@ dist
 
 # OS
 Thumbs.db
+
+# Editor / Claude internals
+.claude/
+
+# Original full-size photo (optimized me.jpg is what's served)
+public/me.png

@@ -4,25 +4,56 @@ import { SOCIALS } from '../data/socials.js';
 const CACHE_KEY = 'pv-followers-cache-v2';
 const CACHE_TTL = 10 * 60 * 1000; // 10 min — reduce proxy load
 const REFRESH_INTERVAL = 5 * 60 * 1000; // re-poll every 5 min
-const PROXY = 'https://corsproxy.io/?'; // public CORS proxy
+
+// ----- proxy fallback chain ------------------------------------------
+// Multiple free CORS proxies tried in sequence. corsproxy.io now charges
+// for production origins, so we put codetabs (most reliable) first and
+// keep corsproxy.io last as a fallback for localhost dev.
+const PROXIES = [
+  (u) => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`,
+  (u) => `https://api.cors.lol/?url=${encodeURIComponent(u)}`,
+  (u) => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+];
+
+// Track which proxy worked last so subsequent fetches skip dead ones first.
+let preferredProxyIdx = 0;
 
 // ----- helpers --------------------------------------------------------
-const fetchViaProxy = async (url, timeoutMs = 7000) => {
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
-  try {
-    const res = await fetch(PROXY + encodeURIComponent(url), { signal: ctrl.signal });
-    if (!res.ok) throw new Error(`proxy ${res.status}`);
-    return await res.text();
-  } finally {
-    clearTimeout(timer);
+const fetchViaProxy = async (url, timeoutMs = 9000) => {
+  const order = PROXIES.slice(preferredProxyIdx).concat(PROXIES.slice(0, preferredProxyIdx));
+  let lastErr;
+  for (let i = 0; i < order.length; i++) {
+    const wrap = order[i];
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+    try {
+      const res = await fetch(wrap(url), { signal: ctrl.signal });
+      if (!res.ok) throw new Error(`proxy ${res.status}`);
+      const text = await res.text();
+      // tiny sanity check — some proxies return HTML error pages with 200
+      if (text.length < 40 && /error|unauthor|blocked/i.test(text)) {
+        throw new Error('proxy returned error page');
+      }
+      // remember the proxy that worked
+      const winnerIdx = (preferredProxyIdx + i) % PROXIES.length;
+      preferredProxyIdx = winnerIdx;
+      return text;
+    } catch (e) {
+      lastErr = e;
+      // continue to next proxy
+    } finally {
+      clearTimeout(timer);
+    }
   }
+  throw new Error('all proxies failed: ' + String(lastErr?.message || lastErr));
 };
 
-// Parse "6.13K" / "1.2M" / "12,500" into an integer.
+// Parse "6.13K" / "1.2M" / "12,500" / "17 882" (European space-sep) into int.
 const parseCompactNumber = (s) => {
   if (s == null) return null;
-  const cleaned = String(s).replace(/,/g, '').trim();
+  // strip commas, thin spaces, non-breaking spaces, regular spaces used as
+  // thousand separators (European locales / some proxy responses)
+  const cleaned = String(s).replace(/[,\s  ]/g, '').trim();
   const m = cleaned.match(/^([\d.]+)\s*([KkMmBb])?/);
   if (!m) return null;
   const n = parseFloat(m[1]);
@@ -49,7 +80,7 @@ const strategies = {
   //   "content":"6.13K subscribers"
   // (also "X thousand subscribers" in the accessibility label).
   'youtube-scrape': async () => {
-    const html = await fetchViaProxy('https://www.youtube.com/@blurred_ai');
+    const html = await fetchViaProxy('https://www.youtube.com/@blurred_ai', 15000);
     const m =
       html.match(/"content":"([\d.,]+[KMB]?)\s*subscribers"/i) ||
       html.match(/([\d.,]+[KMB]?)\s+subscribers/i);
@@ -62,7 +93,7 @@ const strategies = {
   // Medium ships the exact follower count in JSON inside the profile page:
   //   "SocialStats","followerCount":1626,"followingCount":13
   'medium-scrape': async () => {
-    const html = await fetchViaProxy('https://medium.com/@blurred-machine');
+    const html = await fetchViaProxy('https://medium.com/@blurred-machine', 15000);
     const m =
       html.match(/"followerCount":(\d+)/) ||
       html.match(/"socialStats":\{[^}]*"followerCount":(\d+)/);
@@ -94,10 +125,12 @@ const strategies = {
     const profileUrl = 'https://www.facebook.com/profile.php?id=100095099018327';
     const pluginUrl = 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent(profileUrl);
     const html = await fetchViaProxy(pluginUrl);
-    const m = html.match(/([\d,.]+[KM]?)\s+followers/i);
+    // FB renders the count with locale-dependent thousand separator:
+    // "17,872 followers" (US) or "17 882 followers" (EU). Accept either.
+    const m = html.match(/(\d[\d,.\s  ]*[KM]?)\s+followers/i);
     if (!m) throw new Error('facebook: count not found');
     const n = parseCompactNumber(m[1]);
-    if (n == null) throw new Error('facebook: parse fail');
+    if (n == null || n < 100) throw new Error('facebook: implausible value');
     return n;
   },
 
@@ -254,11 +287,42 @@ export default function useFollowerCounts() {
       // ignore corrupt cache
     }
 
+    // Prefer same-origin JSON (committed by the GitHub Action every 4h) —
+    // it's always reachable in production, has no CORS issues, and reflects
+    // a real server-side fetch. Only fall through to the browser scrapers
+    // if the JSON is missing (e.g. very first deploy before the Action ran).
+    let jsonPayload = null;
+    try {
+      const res = await fetch('/follower-counts.json', { cache: 'no-store' });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.counts && typeof data.counts === 'object') {
+          jsonPayload = data;
+        }
+      }
+    } catch {
+      // ignore — fall back to client scrapers
+    }
+
     const runStrategies = async () => {
       const updates = {};
       const statusUpdates = {};
+
+      // 1) Same-origin JSON wins where it has a value
+      if (jsonPayload) {
+        for (const s of SOCIALS) {
+          const v = jsonPayload.counts[s.id];
+          if (Number.isFinite(v) && v >= 0) {
+            updates[s.id] = v;
+            statusUpdates[s.id] = { source: 'live', date: jsonPayload._updated, ok: true };
+          }
+        }
+      }
+
+      // 2) For platforms still missing a value, try the browser scrapers
+      //    (useful for localhost dev or first-deploy bootstrap)
       await Promise.all(
-        SOCIALS.filter((s) => s.liveStrategy && strategies[s.liveStrategy]).map(async (s) => {
+        SOCIALS.filter((s) => s.liveStrategy && strategies[s.liveStrategy] && !(s.id in updates)).map(async (s) => {
           try {
             const n = await strategies[s.liveStrategy]();
             if (Number.isFinite(n) && n >= 0) {
