@@ -52,7 +52,7 @@ export const ABOUT = {
   paragraphs: [
     "Sr. Data Scientist and Manager of Fraud Intelligence at Fidelity Investments — building real-time ML that screens 6M trades a day, prevents ~98% of fraud attempts, and safeguards ~$25M monthly across Wealth Management, Retirement and Digital Assets.",
     "Five years across fraud, research and infrastructure: $4M secured for underwater mammal research with MIT at Egan Labs, 71% invoice processing reduction at Beyond Limits, and an open-source smart-city ITMS pipeline at LogicAI / IISc moving 900K points/min across 5 cities.",
-    "Kaggle Master (#63 global). 1 of 16 Global Data Science Ambassadors at HP. Keynoted NVIDIA GTC 2021 and ODSC West 2022. M.S. Data Analytics Engineering, Northeastern (3.95). B.Tech CS, IIIT Kurnool (4.0).",
+    "Kaggle Master (#63 global, top 0.1%). 1 of 16 Global Data Science Ambassadors at HP. Keynoted NVIDIA GTC 2021 and ODSC West 2022. M.S. Data Analytics Engineering, Northeastern (3.92). B.Tech CS, IIIT (9.6/10).",
   ],
   // Tokens that get teal-highlighted inside the paragraphs above.
   highlights: [
@@ -61,16 +61,20 @@ export const ABOUT = {
     '$4M', '71% invoice processing reduction', '900K points/min',
     'Kaggle Master', '#63 global', '1 of 16 Global Data Science Ambassadors',
     'NVIDIA GTC 2021', 'ODSC West 2022',
-    'M.S. Data Analytics Engineering, Northeastern', 'B.Tech CS, IIIT Kurnool',
-    '3.95', '4.0',
+    'M.S. Data Analytics Engineering, Northeastern', 'B.Tech CS, IIIT',
+    '3.92', '9.6/10',
   ],
-  // Skills grouped by capability so the cloud has visual structure.
+  // Skills grouped by capability — mirrors the 8-category breakdown on the
+  // resume so what's shown here is what's on paper.
   skillGroups: [
-    { label: 'Languages',  items: ['Python', 'SQL'] },
-    { label: 'ML / DL',    items: ['PyTorch', 'TensorFlow'] },
-    { label: 'GenAI',      items: ['LangChain', 'LangGraph', 'RAG / VectorDB', 'Multi-agent'] },
-    { label: 'Data',       items: ['Kafka', 'Flink', 'SageMaker'] },
-    { label: 'Ship',       items: ['Docker', 'Kubernetes'] },
+    { label: 'Languages',           items: ['Python', 'SQL', 'R', 'Java', 'Rust'] },
+    { label: 'Databases & Big Data',items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Snowflake', 'BigQuery', 'Spark', 'Databricks'] },
+    { label: 'ML & Statistics',     items: ['scikit-learn', 'XGBoost', 'pandas', 'NumPy', 'A/B Testing', 'Causal Inference', 'Time-Series'] },
+    { label: 'Deep Learning & NLP', items: ['PyTorch', 'TensorFlow', 'Hugging Face', 'BERT', 'spaCy'] },
+    { label: 'GenAI & LLMs',        items: ['LangChain', 'LangGraph', 'LlamaIndex', 'RAG', 'Agentic AI', 'Multi-agent', 'MCP'] },
+    { label: 'LLM Engineering',     items: ['Prompt Engineering', 'LoRA / PEFT', 'Embeddings', 'Pinecone', 'FAISS', 'Chroma', 'Weaviate', 'GPT-4', 'Claude', 'RAGAS', 'LangSmith', 'NeMo Guardrails'] },
+    { label: 'MLOps & Cloud',       items: ['Docker', 'Kubernetes', 'MLflow', 'FastAPI', 'Airflow', 'AWS SageMaker', 'AWS Bedrock', 'GCP Vertex AI', 'CI/CD', 'Evidently'] },
+    { label: 'Viz & Tools',         items: ['Tableau', 'Power BI', 'Streamlit', 'Plotly', 'matplotlib', 'Git', 'Kafka', 'Scala', 'Linux', 'Jupyter', 'DBT'] },
   ],
 };
 
@@ -78,27 +82,26 @@ export const JOBS = [
   {
     company: 'Fidelity',
     fullCompany: 'Fidelity Investments',
-    title: 'Sr. Data Scientist (Manager)',
+    title: 'Senior Data Scientist',
     team: 'Fraud Intelligence',
     url: 'https://www.fidelity.com',
-    range: 'May 2024 — Present',
+    range: 'Jun 2024 — Present',
     current: true,
     metrics: [
-      { value: '$25M', label: 'saved monthly' },
-      { value: '6M', label: 'trades/day' },
-      { value: '-68%', label: 'manual reviews' },
+      { value: '$25M+', label: 'fraud prevented / mo' },
+      { value: '6M+', label: 'daily trades' },
+      { value: '<100ms', label: 'inference latency' },
     ],
-    tech: ['Python', 'SageMaker', 'Real-time ML', 'DocV', 'Explainability'],
+    tech: ['PySpark', 'AWS SageMaker', 'Transformers', 'FastAPI', 'Docker', 'Kubernetes', 'MLflow', 'SHAP', 'Evidently'],
     bullets: [
-      'Lead the development and deployment of a real-time fraud-prevention engine analysing 200+ risk parameters with DocV auth layers — cut manual reviews by 68% and saving ~$25M monthly.',
-      'Driving a High Frequency Trading fraud model at 6M trades/day, inferenced on SageMaker online distributed training.',
-      'Automated the Customer Fraud Risk REST toolkit (CFR) for auth, verification and metrics — with bias mitigation, explainability and reason-code generation across the rule + model engine.',
-      'Overseeing cyber-fraud capabilities across Wealth Management, Retirement plans, and Digital Assets.',
+      'Owned development of real-time, low-latency fraud detection on 6M+ daily trades — built transformer-based ensemble models on PySpark feature pipelines with distributed training on AWS SageMaker, achieving sub-100ms inference latency.',
+      'Drove production deployment of the fraud-prevention engine, engineering 2000+ risk features for real-time scoring with model governance and threshold tuning — prevented $25M/month in fraud losses while reducing manual reviews by 68%.',
+      'Led team to build the Customer Fraud Risk REST API (FastAPI, Docker, Kubernetes, MLflow, CI/CD) serving real-time risk scores with SHAP-based explainability, bias mitigation, and drift monitoring (Evidently) across rule and ML engines.',
     ],
   },
   {
     company: 'Egan Labs',
-    fullCompany: 'Egan Labs · with MIT',
+    fullCompany: 'Egan Labs · MIT',
     title: 'Data Science Researcher',
     team: 'Acoustic ML',
     url: 'https://www.northeastern.edu',
@@ -106,14 +109,13 @@ export const JOBS = [
     metrics: [
       { value: '$4M', label: 'funding secured' },
       { value: '0.983', label: 'silhouette score' },
-      { value: '200M', label: 'samples clustered' },
+      { value: '200M+', label: 'samples clustered' },
     ],
-    tech: ['PyTorch', 'PCA', 't-SNE', 'Streamlit', 'Signal Processing'],
+    tech: ['K-Means', 'DBSCAN', 'Hierarchical Clustering', 'pandas', 'NumPy', 'SciPy', 'Plotly', 'Streamlit', 'FFT'],
     bullets: [
-      'Redesigned an acoustic array for underwater mammal sound clustering — achieved a silhouette coefficient of 0.983 across 200M samples (4k–500k Hz).',
-      'Built a real-time Streamlit GUI for end-to-end visualisation, plus a geospatial localization map tying acoustic + GPS sensor data.',
-      'Collaborated with MIT researchers on the Gulf of Mexico expedition — work helped secure $4M in funding for a 6-fold subsection v2 array.',
-      'Used PCA, t-SNE, and spectrogram signal processing to reach 95% recognition accuracy on cluttered audio.',
+      'Designed an acoustic array for underwater mammal sound clustering — applied unsupervised ML (K-Means, DBSCAN, hierarchical clustering) on 200M+ samples across 4k–500k Hz bands, achieving a silhouette coefficient of 0.983.',
+      'Developed a real-time Streamlit GUI for end-to-end data visualisation and EDA, leveraging pandas, NumPy, SciPy, and Plotly for large-scale signal processing pipelines with FFT-based feature extraction.',
+      'Collaborated with MIT researchers on data acquisition expeditions, securing $4M in funding for a v2 build with a 6-fold subsection array; co-authored findings for a peer-reviewed publication.',
     ],
   },
   {
@@ -156,22 +158,21 @@ export const JOBS = [
   },
   {
     company: 'Logic AI',
-    fullCompany: 'Logic AI · IISc',
-    title: 'Data Scientist — ITMS',
-    team: 'Smart City',
+    fullCompany: 'Logic AI',
+    title: 'Data Scientist',
+    team: 'ITMS',
     url: 'https://logicai.io',
     range: 'Apr 2020 — Sep 2022',
     metrics: [
-      { value: '900K', label: 'pts/min ingestion' },
-      { value: '5', label: 'smart cities' },
-      { value: '0.91', label: 'F1 stable' },
+      { value: '1.2M', label: 'data pts/min' },
+      { value: '1.5×', label: 'forecasting throughput' },
+      { value: '0.91', label: 'F1 score' },
     ],
-    tech: ['Kafka', 'Flink', 'SageMaker', 'Databricks', 'CI/CD'],
+    tech: ['PySpark', 'Dask', 'Kafka', 'Airflow', 'AWS SageMaker', 'S3', 'MLflow'],
     bullets: [
-      'Improved real-time ingestion by 15% by shifting to Kafka Streams — 1.5x ITMS forecasting throughput on 1.2M points/min.',
-      'Drove error rate down to a stable 0.91 F1 with hierarchical classification + drift analysis on AWS SageMaker.',
-      'Built an open-source ITMS ingestion pipeline serving 5 smart cities at 900k pts/min, lifting throughput 1.6x.',
-      'Reduced congestion 20% via transport-data governance on Databricks, while accelerating CI/CD MLOps by 15%.',
+      'Improved real-time ingestion efficiency by 15% via Kafka Streams migration, accelerating ITMS time-series forecasting throughput by 1.5× and handling 1.2M data points/minute.',
+      'Reduced error rate by 0.6× to a stable 0.91 F1 score using hierarchical classification and concept-drift detection on AWS SageMaker and S3, with MLflow for model tracking and monitoring.',
+      'Built and orchestrated production ETL pipelines for real-time data ingestion using PySpark, Dask, Kafka, and Airflow for model inference, scheduling, execution, and observability.',
     ],
   },
 ];
