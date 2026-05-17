@@ -48,6 +48,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: refresh follower counts [skip ci]"
+            # Note: no [skip ci] — we WANT the deploy workflow to pick this
+            # up so the new JSON is baked into the live site immediately.
+            git commit -m "chore: refresh follower counts"
             git push
           fi
