@@ -1,0 +1,14 @@
+{
+  "_updated": "2026-05-17T15:42:30.732Z",
+  "counts": {
+    "github": 267,
+    "linkedin": 11519,
+    "youtube": 6220,
+    "facebook": 17882,
+    "instagram": 211072,
+    "medium": 1628
+  },
+  "errors": {
+    "substack": "https://blurredai.substack.com/ -> HTTP 403"
+  }
+}
