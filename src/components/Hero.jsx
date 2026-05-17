@@ -48,10 +48,36 @@ export default function Hero() {
         {HERO.description}
       </motion.p>
 
-      <motion.div {...lineUp(2.7)} className="mt-12">
+      <motion.div {...lineUp(2.7)} className="mt-12 flex flex-wrap items-center gap-3">
         <a href={HERO.cta.href} className="btn-outline">
           {HERO.cta.label}
         </a>
+        {HERO.resumeCta && (
+          <a
+            href={HERO.resumeCta.href}
+            target={HERO.resumeCta.external ? '_blank' : undefined}
+            rel={HERO.resumeCta.external ? 'noopener noreferrer' : undefined}
+            className="group inline-flex items-center gap-2 rounded font-mono text-sm text-light-slate transition-all duration-300 hover:text-green"
+            style={{
+              padding: '1.05rem 1.65rem',
+              lineHeight: 1,
+              border: '1px solid rgba(168, 178, 209, 0.3)',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#64ffda'; e.currentTarget.style.backgroundColor = 'rgba(100, 255, 218, 0.08)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(168, 178, 209, 0.3)'; e.currentTarget.style.backgroundColor = 'transparent'; }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {HERO.resumeCta.label}
+          </a>
+        )}
       </motion.div>
 
     </section>

@@ -35,6 +35,11 @@ export const HERO = {
   description:
     "Sr. Data Scientist at Fidelity Investments — shipping real-time AI models that prevents fraud and safeguards our customers.",
   cta: { label: 'Check out my work', href: '#work' },
+  resumeCta: {
+    label: 'Download Resume',
+    href: '/paras_varshney_resume.pdf',
+    external: true,
+  },
 };
 
 export const ABOUT = {
@@ -52,7 +57,7 @@ export const ABOUT = {
   paragraphs: [
     "Sr. Data Scientist and Manager of Fraud Intelligence at Fidelity Investments — building real-time ML that screens 6M trades a day, prevents ~98% of fraud attempts, and safeguards ~$25M monthly across Wealth Management, Retirement and Digital Assets.",
     "Five years across fraud, research and infrastructure: $4M secured for underwater mammal research with MIT at Egan Labs, 71% invoice processing reduction at Beyond Limits, and an open-source smart-city ITMS pipeline at LogicAI / IISc moving 900K points/min across 5 cities.",
-    "Kaggle Master (#63 global, top 0.1%). 1 of 16 Global Data Science Ambassadors at HP. Keynoted NVIDIA GTC 2021 and ODSC West 2022. M.S. Data Analytics Engineering, Northeastern (3.92). B.Tech CS, IIIT (9.6/10).",
+    "Kaggle Master (#63 global, top 0.001%). 1 of 16 Global Data Science Ambassadors at HP. Keynoted NVIDIA GTC 2021 and ODSC West 2022. M.S. Data Analytics Engineering, Northeastern (3.92). B.Tech CS, IIIT (9.06/10).",
   ],
   // Tokens that get teal-highlighted inside the paragraphs above.
   highlights: [
@@ -62,7 +67,7 @@ export const ABOUT = {
     'Kaggle Master', '#63 global', '1 of 16 Global Data Science Ambassadors',
     'NVIDIA GTC 2021', 'ODSC West 2022',
     'M.S. Data Analytics Engineering, Northeastern', 'B.Tech CS, IIIT',
-    '3.92', '9.6/10',
+    '3.92', '9.06/10', 'top 0.001%',
   ],
   // Skills grouped by capability — mirrors the 8-category breakdown on the
   // resume so what's shown here is what's on paper.
