@@ -43,7 +43,7 @@ export const SOCIALS = [
     url: 'https://www.youtube.com/@blurred_ai',
     liveStrategy: 'youtube-scrape',
     metric: 'subscribers',
-    verified: { count: 6130, date: '2026-05-16' },
+    verified: { count: 6220, date: '2026-05-17' },
     primary: true,
   },
   {
@@ -53,7 +53,7 @@ export const SOCIALS = [
     url: 'https://medium.com/@blurred-machine',
     liveStrategy: 'medium-scrape',
     metric: 'followers',
-    verified: { count: 1626, date: '2026-05-16' },
+    verified: { count: 1628, date: '2026-05-17' },
     primary: true,
   },
   {

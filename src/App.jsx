@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Loader from './components/Loader.jsx';
 import Nav from './components/Nav.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
+import { warmFollowerCounts } from './hooks/useFollowerCounts.js';
 import SideLeft from './components/SideLeft.jsx';
 import SideRight from './components/SideRight.jsx';
 import Hero from './components/Hero.jsx';
@@ -17,6 +18,13 @@ export default function App() {
     if (typeof window === 'undefined') return false;
     return sessionStorage.getItem('pv-loaded') !== '1';
   });
+
+  // Pre-warm follower-count fetches the moment the app mounts — runs in
+  // parallel with the Loader animation so the pill is populated by the
+  // time the page renders.
+  useEffect(() => {
+    warmFollowerCounts();
+  }, []);
 
   useEffect(() => {
     if (!isLoading) return;
