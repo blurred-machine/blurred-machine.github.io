@@ -19,6 +19,7 @@ Thumbs.db
 
 # Original full-size photo (optimized me.jpg is what's served)
 public/me.png
+public/me_old.png
 
 # Legacy from when counts were cron-fetched server-side (now client-side)
 public/follower-counts.json

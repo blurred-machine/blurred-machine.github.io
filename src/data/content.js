@@ -33,7 +33,7 @@ export const HERO = {
   name: 'Paras Varshney.',
   tagline: 'I build AI that impacts millions.',
   description:
-    "Sr. Data Scientist at Fidelity Investments — shipping real-time AI models that prevents fraud and safeguards our customers.",
+    "Sr. Data Scientist at Fidelity Investments, shipping real-time AI models that prevents fraud and safeguards our customers.",
   cta: { label: 'Check out my work', href: '#work' },
   resumeCta: {
     label: 'Download Resume',
