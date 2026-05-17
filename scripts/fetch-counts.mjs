@@ -77,7 +77,9 @@ const scrapers = {
   },
 
   substack: async () => {
-    const html = await fetchText('https://blurredai.substack.com/');
+    // The main `/` is Cloudflare-blocked from CI runner IPs, but `/about`
+    // serves the same "Over N subscribers" badge and is accessible.
+    const html = await fetchText('https://blurredai.substack.com/about');
     const m =
       html.match(/Over\s+([\d,.]+[KM]?)\s+subscribers/i) ||
       html.match(/([\d,.]+[KM]?)\s+subscribers/i);
