@@ -39,17 +39,38 @@ export const HERO = {
 
 export const ABOUT = {
   photo: '/me.jpg',
+  status: { live: true, label: 'Open to collaborate' },
+  location: 'Boston, MA',
+  currentlyAt: { company: 'Fidelity Investments', role: 'Sr. Data Scientist (Manager)' },
+  // Headline KPI strip — bold numbers that anchor the section.
+  stats: [
+    { value: '5+',  label: 'years shipping production ML' },
+    { value: '98%', label: 'fraud attempts prevented' },
+    { value: '$25M',label: 'safeguarded monthly' },
+    { value: '#63', label: 'Kaggle global rank' },
+  ],
   paragraphs: [
     "Sr. Data Scientist and Manager of Fraud Intelligence at Fidelity Investments — building real-time ML that screens 6M trades a day, prevents ~98% of fraud attempts, and safeguards ~$25M monthly across Wealth Management, Retirement and Digital Assets.",
     "Five years across fraud, research and infrastructure: $4M secured for underwater mammal research with MIT at Egan Labs, 71% invoice processing reduction at Beyond Limits, and an open-source smart-city ITMS pipeline at LogicAI / IISc moving 900K points/min across 5 cities.",
     "Kaggle Master (#63 global). 1 of 16 Global Data Science Ambassadors at HP. Keynoted NVIDIA GTC 2021 and ODSC West 2022. M.S. Data Analytics Engineering, Northeastern (3.95). B.Tech CS, IIIT Kurnool (4.0).",
   ],
-  skills: [
-    'Python', 'SQL',
-    'PyTorch', 'TensorFlow',
-    'LangChain / LangGraph', 'RAG / VectorDB',
-    'AWS SageMaker', 'Kafka / Flink',
-    'Docker / Kubernetes', 'Multi-agent / Agentic AI',
+  // Tokens that get teal-highlighted inside the paragraphs above.
+  highlights: [
+    'Sr. Data Scientist', 'Manager of Fraud Intelligence', 'Fidelity Investments',
+    '6M trades a day', '~98%', '$25M monthly',
+    '$4M', '71% invoice processing reduction', '900K points/min',
+    'Kaggle Master', '#63 global', '1 of 16 Global Data Science Ambassadors',
+    'NVIDIA GTC 2021', 'ODSC West 2022',
+    'M.S. Data Analytics Engineering, Northeastern', 'B.Tech CS, IIIT Kurnool',
+    '3.95', '4.0',
+  ],
+  // Skills grouped by capability so the cloud has visual structure.
+  skillGroups: [
+    { label: 'Languages',  items: ['Python', 'SQL'] },
+    { label: 'ML / DL',    items: ['PyTorch', 'TensorFlow'] },
+    { label: 'GenAI',      items: ['LangChain', 'LangGraph', 'RAG / VectorDB', 'Multi-agent'] },
+    { label: 'Data',       items: ['Kafka', 'Flink', 'SageMaker'] },
+    { label: 'Ship',       items: ['Docker', 'Kubernetes'] },
   ],
 };
 
@@ -61,6 +82,13 @@ export const JOBS = [
     team: 'Fraud Intelligence',
     url: 'https://www.fidelity.com',
     range: 'May 2024 — Present',
+    current: true,
+    metrics: [
+      { value: '$25M', label: 'saved monthly' },
+      { value: '6M', label: 'trades/day' },
+      { value: '-68%', label: 'manual reviews' },
+    ],
+    tech: ['Python', 'SageMaker', 'Real-time ML', 'DocV', 'Explainability'],
     bullets: [
       'Lead the development and deployment of a real-time fraud-prevention engine analysing 200+ risk parameters with DocV auth layers — cut manual reviews by 68% and saving ~$25M monthly.',
       'Driving a High Frequency Trading fraud model at 6M trades/day, inferenced on SageMaker online distributed training.',
@@ -75,6 +103,12 @@ export const JOBS = [
     team: 'Acoustic ML',
     url: 'https://www.northeastern.edu',
     range: 'Feb 2023 — May 2024',
+    metrics: [
+      { value: '$4M', label: 'funding secured' },
+      { value: '0.983', label: 'silhouette score' },
+      { value: '200M', label: 'samples clustered' },
+    ],
+    tech: ['PyTorch', 'PCA', 't-SNE', 'Streamlit', 'Signal Processing'],
     bullets: [
       'Redesigned an acoustic array for underwater mammal sound clustering — achieved a silhouette coefficient of 0.983 across 200M samples (4k–500k Hz).',
       'Built a real-time Streamlit GUI for end-to-end visualisation, plus a geospatial localization map tying acoustic + GPS sensor data.',
@@ -89,6 +123,12 @@ export const JOBS = [
     team: 'Z by HP',
     url: 'https://www.hp.com',
     range: 'Aug 2020 — Oct 2023',
+    metrics: [
+      { value: '1 of 16', label: 'global ambassadors' },
+      { value: '2', label: 'global keynotes' },
+      { value: '13', label: 'Kaggle comps led' },
+    ],
+    tech: ['NVIDIA', 'Z by HP', 'Kaggle', 'GTC', 'ODSC'],
     bullets: [
       'One of 16 Global Data Science Ambassadors worldwide for HP — partnered with NVIDIA on GPU-accelerated DS workflows.',
       'Keynoted NVIDIA GTC AI 2021 and ODSC West 2022, showcasing applied advances in AI and data science.',
@@ -103,6 +143,11 @@ export const JOBS = [
     team: 'Applied AI',
     url: 'https://www.beyond.ai',
     range: 'Jun 2023 — Aug 2023',
+    metrics: [
+      { value: '-71%', label: 'invoice time' },
+      { value: '-0.6×', label: 'prediction error' },
+    ],
+    tech: ['NLP', 'Form Recognizers', 'Oracle', 'AWS S3'],
     bullets: [
       'Cut invoice processing time by 71% by leveraging Form Recognizers + real-time account-code suggestions.',
       'Reduced prediction error by 0.6x with NLP + hierarchical classification strategies.',
@@ -116,6 +161,12 @@ export const JOBS = [
     team: 'Smart City',
     url: 'https://logicai.io',
     range: 'Apr 2020 — Sep 2022',
+    metrics: [
+      { value: '900K', label: 'pts/min ingestion' },
+      { value: '5', label: 'smart cities' },
+      { value: '0.91', label: 'F1 stable' },
+    ],
+    tech: ['Kafka', 'Flink', 'SageMaker', 'Databricks', 'CI/CD'],
     bullets: [
       'Improved real-time ingestion by 15% by shifting to Kafka Streams — 1.5x ITMS forecasting throughput on 1.2M points/min.',
       'Drove error rate down to a stable 0.91 F1 with hierarchical classification + drift analysis on AWS SageMaker.',
