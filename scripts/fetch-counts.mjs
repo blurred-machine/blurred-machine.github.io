@@ -33,14 +33,24 @@ const parseCompact = (s) => {
   return Math.round(n * mult);
 };
 
+// Full browser fingerprint — Cloudflare-protected sites (Substack) require
+// the Sec-Fetch-* signals to pass their bot check. With just UA + Accept,
+// they 403 GitHub Actions IPs.
+const BROWSER_HEADERS = {
+  'User-Agent': UA,
+  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+  'Accept-Language': 'en-US,en;q=0.9',
+  'Accept-Encoding': 'gzip, deflate, br',
+  'Sec-Fetch-Dest': 'document',
+  'Sec-Fetch-Mode': 'navigate',
+  'Sec-Fetch-Site': 'none',
+  'Sec-Fetch-User': '?1',
+  'Upgrade-Insecure-Requests': '1',
+};
+
 const fetchText = async (url, opts = {}) => {
   const res = await fetch(url, {
-    headers: {
-      'User-Agent': UA,
-      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.9',
-      ...(opts.headers || {}),
-    },
+    headers: { ...BROWSER_HEADERS, ...(opts.headers || {}) },
     redirect: 'follow',
   });
   if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
