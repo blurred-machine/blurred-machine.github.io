@@ -236,52 +236,85 @@ function CurrentlyAtCard() {
   );
 }
 
-// ─── grouped skill cloud ─────────────────────────────────────────────
+// ─── auto-scrolling skill cloud (3 marquee rows) ─────────────────────
+// Splits skillGroups into 3 visually balanced rows. Each row carries a
+// `group` data attr on every chip so hovering reveals the category at
+// the bottom of the cloud. Pure CSS scroll (see index.css), pauses on
+// row-hover, chips lift + glow on chip-hover.
 function SkillCloud() {
   const groups = ABOUT.skillGroups?.length
     ? ABOUT.skillGroups
     : [{ label: 'Stack', items: ABOUT.skills || [] }];
+
+  // Flatten then redistribute round-robin into 3 rows so each row mixes
+  // domains (Python next to PyTorch next to Docker) — visually richer
+  // than dumping all of one category in a single row.
+  const flat = groups.flatMap((g) => g.items.map((item) => ({ item, group: g.label })));
+  const rows = [[], [], []];
+  flat.forEach((chip, i) => rows[i % 3].push(chip));
+
+  const directions = ['left', 'right', 'left'];
+  // class names must use the full `skill-marquee-track--*` prefix so the
+  // CSS rule (.skill-marquee-track--slow) actually matches.
+  const speedMods = ['', '', 'skill-marquee-track--slow'];
+
+  const [active, setActive] = useState(null); // { item, group } | null
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="mt-2 rounded-lg border border-lightest-navy bg-light-navy/30 p-5 md:p-6"
+      className="mt-2 overflow-hidden rounded-lg border border-lightest-navy bg-light-navy/30 p-5 md:p-6"
     >
+      {/* heading */}
       <div className="mb-4 flex items-center gap-3">
         <span className="font-mono text-[11px] uppercase tracking-wider text-green">
           Stack
         </span>
         <span className="h-px flex-1 bg-lightest-navy" />
         <span className="font-mono text-[10.5px] text-light-slate">
-          tools I reach for
+          hover to pause &middot; {flat.length} tools
         </span>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {groups.map((g, gi) => (
-          <motion.div
-            key={g.label}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: gi * 0.05 }}
-          >
-            <div className="mb-2 font-mono text-[10.5px] uppercase tracking-wider text-light-slate">
-              {g.label}
-            </div>
-            <ul className="flex flex-wrap gap-1.5">
-              {g.items.map((s) => (
+      {/* 3 auto-scrolling rows */}
+      <div className="space-y-2.5">
+        {rows.map((row, ri) => (
+          <div key={ri} className="skill-marquee" aria-hidden="false">
+            <ul
+              className={`skill-marquee-track skill-marquee-track--${directions[ri]} ${speedMods[ri]}`.trim()}
+            >
+              {/* Render the row twice so the loop is seamless */}
+              {[...row, ...row].map((chip, ci) => (
                 <li
-                  key={s}
-                  className="cursor-default rounded-md border border-lightest-navy bg-navy/40 px-2 py-1 font-mono text-[11.5px] text-light-slate transition-all duration-200 hover:-translate-y-0.5 hover:border-green/60 hover:bg-green-tint hover:text-green"
+                  key={`${ri}-${ci}-${chip.item}`}
+                  onMouseEnter={() => setActive(chip)}
+                  onMouseLeave={() => setActive(null)}
+                  onFocus={() => setActive(chip)}
+                  onBlur={() => setActive(null)}
+                  tabIndex={0}
+                  className="cursor-default whitespace-nowrap rounded-md border border-lightest-navy bg-navy/40 px-3 py-1.5 font-mono text-[12px] text-light-slate transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 hover:border-green/70 hover:bg-green-tint hover:text-green hover:shadow-[0_4px_18px_-6px_rgba(100,255,218,0.55)] focus:-translate-y-0.5 focus:scale-105 focus:border-green focus:bg-green-tint focus:text-green focus:outline-none"
                 >
-                  {s}
+                  {chip.item}
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         ))}
+      </div>
+
+      {/* live category readout — fades through as user hovers chips */}
+      <div className="mt-4 flex h-5 items-center justify-center font-mono text-[10.5px] uppercase tracking-wider">
+        {active ? (
+          <span className="text-light-slate">
+            <span className="text-green">{active.item}</span>
+            <span className="mx-2 text-lightest-navy">/</span>
+            {active.group}
+          </span>
+        ) : (
+          <span className="text-light-slate/60">hover any chip to see its category</span>
+        )}
       </div>
     </motion.div>
   );
