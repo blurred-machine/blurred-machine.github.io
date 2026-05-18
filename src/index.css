@@ -166,3 +166,38 @@ section[id] {
 main {
   counter-reset: section;
 }
+
+/* ============================================================
+   Skill cloud — auto-scrolling marquee
+   Pure CSS, no JS scroll loop. Two copies of the chip list inside
+   each track; animating -50% scrolls past exactly one copy so the
+   loop is seamless. Pauses on row hover.
+   ============================================================ */
+@keyframes marquee-left  { to { transform: translateX(-50%); } }
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.skill-marquee {
+  overflow: hidden;
+  /* fade chips in/out at the edges */
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.skill-marquee:hover .skill-marquee-track {
+  animation-play-state: paused;
+}
+.skill-marquee-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  will-change: transform;
+}
+.skill-marquee-track--left  { animation: marquee-left  40s linear infinite; }
+.skill-marquee-track--right { animation: marquee-right 36s linear infinite; }
+.skill-marquee-track--slow  { animation-duration: 52s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-marquee-track { animation: none !important; }
+}
