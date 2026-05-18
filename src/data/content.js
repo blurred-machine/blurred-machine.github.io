@@ -183,32 +183,48 @@ export const JOBS = [
 ];
 
 // "Featured" projects — Paras's most impactful work, treated as case studies.
+// `metrics` shows as gradient callouts; `accent` controls the mini-visual.
 export const PROJECTS_FEATURED = [
   {
     title: 'Real-Time Fraud Prevention Engine',
     org: 'Fidelity Investments',
     accent: 'fraud',
     description:
-      'A production fraud-risk engine analysing 200+ live signals per transaction with DocV auth layers and real-time risk ratings. Built-in bias mitigation and reason-code generation make every decision auditable. Cut manual reviews 68% and saves an estimated $25M monthly.',
-    tech: ['Python', 'AWS SageMaker', 'Real-time ML', 'Explainability'],
+      'Production fraud-risk engine analysing 200+ live signals per transaction with DocV auth layers. Built-in bias mitigation, reason-code generation, and real-time risk ratings.',
+    metrics: [
+      { value: '$25M', label: 'saved / mo' },
+      { value: '6M+', label: 'trades / day' },
+      { value: '-68%', label: 'manual reviews' },
+    ],
+    tech: ['Python', 'SageMaker', 'Real-time ML', 'SHAP'],
     links: [],
   },
   {
     title: 'Acoustic Array for Marine Mammal Clustering',
-    org: 'Egan Labs · with MIT',
+    org: 'Egan Labs · MIT',
     accent: 'acoustic',
     description:
-      'Redesigned an underwater acoustic array, then layered state-of-the-art clustering across 200M samples spanning 4k–500k Hz. Reached a 0.983 silhouette coefficient and a 95% recognition rate — work that helped secure $4M in funding for a 6-fold subsection v2.',
-    tech: ['PyTorch', 'Signal Processing', 'PCA / t-SNE', 'Streamlit'],
+      'Unsupervised ML clustering across 200M+ audio samples spanning 4k–500k Hz bands. Helped secure $4M in v2 funding from MIT collaboration.',
+    metrics: [
+      { value: '$4M', label: 'funding raised' },
+      { value: '0.983', label: 'silhouette score' },
+      { value: '200M+', label: 'samples' },
+    ],
+    tech: ['PyTorch', 'K-Means', 't-SNE', 'Streamlit'],
     links: [],
   },
   {
     title: 'ITMS Smart-City Forecasting Pipeline',
-    org: 'Logic AI · IISc',
+    org: 'Logic AI',
     accent: 'transport',
     description:
-      'An open-source intelligent-transport pipeline ingesting 900k points/min from 5 smart cities. Kafka Streams + Apache Flink with hierarchical drift-aware classifiers held a stable 0.91 F1 while pushing throughput 1.6x and reducing congestion 20%.',
-    tech: ['Kafka Streams', 'Apache Flink', 'Databricks', 'SageMaker'],
+      'Open-source intelligent-transport pipeline with Kafka Streams + Flink and drift-aware hierarchical classifiers. Lifted throughput 1.5× at a stable 0.91 F1.',
+    metrics: [
+      { value: '1.2M', label: 'pts/min' },
+      { value: '1.5×', label: 'throughput' },
+      { value: '0.91', label: 'F1 score' },
+    ],
+    tech: ['Kafka', 'Flink', 'SageMaker', 'Databricks'],
     links: [],
   },
   {
@@ -216,7 +232,11 @@ export const PROJECTS_FEATURED = [
     org: 'Beyond Limits',
     accent: 'invoice',
     description:
-      'A Form-Recognizer + hierarchical-NLP workflow that proposes account codes in real time. Cut invoice processing time by 71% and shaved 0.6x off prediction error — eliminating manual Chart-of-Accounts lookups across the ERP.',
+      'Form Recognizers + hierarchical-NLP workflow proposing account codes in real time. Eliminated manual Chart-of-Accounts lookups across the ERP.',
+    metrics: [
+      { value: '-71%', label: 'processing time' },
+      { value: '-0.6×', label: 'prediction error' },
+    ],
     tech: ['NLP', 'Form Recognizers', 'AWS S3', 'Oracle'],
     links: [],
   },
